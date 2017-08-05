@@ -25,5 +25,23 @@
       </ul>
     </nav>
 
+    <main>
+          <h2>Climber Directory</h2>
+
+          <ul>
+                  <% for(let i = 0; i < climbers.length; i++) { %>
+
+                        <li>
+
+                            <a href="/climbers/<%=climbers[i]._id%>">
+                                <%=climbers[i].name%>
+                            </a>
+                        </li>
+                  <% } %>
+          </ul>
+
+
+    </main>
+
   </body>
 </html>

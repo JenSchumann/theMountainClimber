@@ -6,7 +6,7 @@ const climberSchema = mongoose.Schema({
         description: String
 });
 
-const Climber = mongoose.model('Climber', authorSchema);
+const Climber = mongoose.model('Climber', climberSchema);
 
 
 

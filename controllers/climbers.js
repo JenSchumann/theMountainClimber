@@ -26,13 +26,29 @@ router.post('/', (req, res)=>{
     });
 });
 
+//delete route
+router.delete('/:id', (req, res)=>{
+    Climber.findByIdAndRemove(req.params.id, ()=>{
+        res.redirect('/climbers');
+    })
+})
 
+//edit route
+router.get('/:id/edit', (req, res)=>{
+    Climber.findById(req.params.id, (err, foundClimber)=>{
+        res.render('climbers/edit.ejs', {
+            climber: foundClimber
+        });
+    });
+});
 
+//for posting edits from user as an update
 
-
-
-
-
+router.put('/:id', (req, res)=>{
+      Climber.findByIdAndUpdate(req.params.id, req.body, ()=>{
+          res.redirect('/climbers');
+      });
+});
 
 
 

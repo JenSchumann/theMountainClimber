@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+      <header>
+
+
+        <h1>Edit <%=climber.name%>'s Profile</h1>
+
+
+          <nav>
+
+                <ul>
+
+
+                      <li>
+                              <a href="/">Home</a>
+                      </li>
+
+                      <li>
+                              <a href="/climbers">Climber Directory</a>
+                      </li>
+                </ul>
+
+          </nav>
+
+      </header>
+
+      <main>
+                <h2>Climber Profile:</h2>
+                <form action="/climbers/<%=climber._id%>?_method=PUT" method="POST">
+
+                Update Name:<input type="text" name="name" value="<%=climber.name%>"/><br/>
+
+                Update Profile Image:<input type="text" name="img" value="<%=climber.img%>"/><br/>
+
+                Update Climber Description:<textarea type="text" name="description" value="<%=climber.description%>"></textarea><br/>
+
+                <input type="submit" value="Update Climber"/>
+
+                </form>
+      </main>
+  </body>
+</html>

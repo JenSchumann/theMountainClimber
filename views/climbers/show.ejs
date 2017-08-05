@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <style media="screen">
+          img {
+            height: 400px;
+            width: 400px;
+          }
+
+        </style>
   </head>
 
 
@@ -35,12 +43,25 @@
                       <div class="container">
 
                                 Name: <%=climber.name;%></br>
-                                Profile Image: <img src="<%=climber.img;%>"> </br>
+                                <img src="<%=climber.img;%>"> </br>
                                 About this Climber: <%=climber.description;%></br>
 
                       </div>
               </section>
 
+              <section>
+
+                    <a href="/climbers/<%=climber._id%>/edit">Edit</a>
+
+              </section>
+
+              <section>
+                  <form action="/climbers/<%=climber._id%>?_method=DELETE" method="POST">
+                  <input type="submit" value="Delete Climber" />
+
+                  </form>
+
+              </section>
     </main>
 
   </body>

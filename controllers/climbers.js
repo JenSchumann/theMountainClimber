@@ -1,5 +1,6 @@
 const express = require('express');
 const Climber = require('../models/climbers.js');
+const Mountain = require('../models/mountains.js');
 const router = express.Router();
 
 
@@ -14,16 +15,16 @@ router.get('/', (req, res)=>{
     })
 });
 
-//add new climber
-router.get('/new', (req, res)=>{
-      res.render('climbers/new.ejs');
-});
-
 //create route
 router.post('/', (req, res)=>{
     Climber.create(req.body, (err, createdClimber)=>{
         res.redirect('/climbers');
     });
+});
+
+//add new climber
+router.get('/new', (req, res)=>{
+      res.render('climbers/new.ejs');
 });
 
 //delete route

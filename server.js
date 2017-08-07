@@ -62,8 +62,8 @@ app.get('/', (req, res)=>{
 
 
 
-
-mongoose.connect('mongodb://localhost:27017/tall_Mountains');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/tall_Mountains'
+mongoose.connect(mongoUri);
 
 mongoose.connection.once('open', ()=>{
           console.log('mountain climber connected to mongo');
@@ -71,10 +71,13 @@ mongoose.connection.once('open', ()=>{
 
 
 
+const port = process.env.PORT || 3000;
 
 
 
-
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
   console.log('hiker is listening');
+  console.log('---------------------------------');
+  console.log('Server running on port: ' + port);
+  console.log('---------------------------------');
 });

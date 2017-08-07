@@ -27,6 +27,19 @@
 
     </header>
 
+    <main>
+                <h2>14eener Summit Posts</h2>
+
+                <ul>
+                        <% for(let i = 0; i < mountains.length; i++) { %>
+                        <li>
+                              <a href="/mountains/<%=mountains[i]._id%>">
+                              <%=mountains[i].fourteeners%></a>
+                        </li>
+                  <%  }  %>
+                </ul>
+    </main>
+
 
   </body>
 </html>

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Mountain = require('../models/mountains.js');
+const Climb = require('../models/climbs.js');
 const Climber = require('../models/climbers.js')
 const bcrypt = require('bcrypt');
 
@@ -14,26 +14,34 @@ router.get('/', (req, res)=>{
 });
 
 router.post('/', (req, res)=>{
-  // res.send(req.body);
-	Climber.create(req.body, (err, createdClimber)=>{
-    res.send(createdClimber);
-    // createdClimber.mountains.push(req.body.fourteeners);
-		// res.redirect('/climbers');
-	});
+    // res.send(req.body);
+    req.body.climbId);
+      Climb.findById(req.body.climbId, (err, foundClimb)=>{
+        console.log(foundClimb);
+	         Climber.create(req.body, (err, createdClimber)=>{
+              foundClimb.climbs.push(createdClimb);
+              foundClimb.save((err,data)=>{
+		              res.redirect('/climbers');
+                });
+          });
+	   });
 });
 
 router.get('/new', (req, res)=>{
-  Mountain.find({}, (err, allMountains)=>{
+  Climb.find({}, (err, allClimbs)=>{
         res.render('climbers/new.ejs', {
-            mountains: allMountains
+            climbs: allClimbs
         });
     });
 });
 
 router.get('/:id', (req, res)=>{
 	Climber.findById(req.params.id, (err, foundClimber)=>{
+    Climb.findOne({'climbs._id':req.params.id}, (err, foundClimb)=>{
 		res.render('climbers/show.ejs', {
-			climber: foundClimber
+          climb: foundClimb,
+          climber: foundClimber
+        }):
 		});
 	});
 });
@@ -41,14 +49,14 @@ router.get('/:id', (req, res)=>{
 router.delete('/:id', (req, res)=>{
 
 	Climber.findByIdAndRemove(req.params.id, (err, foundClimber)=>{
-		const mountainIds = [];
-		for (let i = 0; i < foundClimber.mountains.length; i++) {
-			mountainIds.push(foundClimber.mountains[i]._id);
+		const climbIds = [];
+		for (let i = 0; i < foundClimber.climbs.length; i++) {
+			climbIds.push(foundClimber.climbs[i]._id);
 		}
-		Mountain.remove(
+		Climb.remove(
 			{
 				_id : {
-					$in: mountainIds
+					$in: climbIds
 				}
 			},
 			(err, data)=>{
@@ -59,12 +67,20 @@ router.delete('/:id', (req, res)=>{
 });
 
 router.get('/:id/edit', (req, res)=>{
+  console.log('=============================');
 	Climber.findById(req.params.id, (err, foundClimber)=>{
-		res.render('climbers/edit.ejs', {
-			climber: foundClimber
-		});
-	});
+    Climb.find({} (err, allClimbs)=>{
+      Climb.findOne({'climbs._id':req.params.id}, (err, foundClimberClimb=>{
+		      res.render('climbers/edit.ejs', {
+			         climber: foundClimber,
+               climb: allClimbs,
+               climberClimb: foundClimberClimb
+		           });
+            });
+        });
+	   });
 });
+
 
 router.put('/:id', (req, res)=>{
 	Climber.findByIdAndUpdate(req.params.id, req.body, ()=>{

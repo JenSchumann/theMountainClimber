@@ -18,13 +18,11 @@ text-align: center;
     height: 70%;
     width: 60%;
     margin: 0 auto;
-    background-color: #0d5465;
+    background-color: #002350;
     opacity: .70;
     color: white;
     text-decoration: none;
     justify-content: center;
-    display: flex;
-    position: absolute;
 }
 
 .link {

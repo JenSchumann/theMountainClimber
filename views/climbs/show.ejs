@@ -6,7 +6,7 @@
   </head>
   <body>
           <header>
-                    <h1>Summit Posts About <%=mountain.title%></h1>
+                    <h1>Summit Posts About <%=climb.title%></h1>
 
                     <nav>
                           <ul>
@@ -17,7 +17,7 @@
 
                                   <li>
                                           <a href="/climbers">Climber Directory</a>
-                                          <a href="/mountains">14eener Summit Directory</a>
+                                          <a href="/climbs">14eener Summit Directory</a>
                                   </li>
                           </ul>
                     </nav>
@@ -30,11 +30,11 @@
           </section>
 
           <section>
-                    <a href="/mountains/<%=mountain._id%>/edit">Edit</a>
+                    <a href="/climbs/<%=climb._id%>/edit">Edit</a>
           </section>
 
           <section>
-                <form action="/mountains/<%=mountain._id%>?_method=DELETE" method="POST">
+                <form action="/climbs/<%=climb._id%>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete Summit Post"/>
                 </form>
         </section>

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const Climber = require('./models/climbers.js');
-const Mountain = require('./models/mountains.js');
+const Climb = require('./models/climbs.js');
 
 
 //middleware
@@ -23,31 +23,37 @@ app.use(session({
 const climbersController = require('./controllers/climbers.js');
 app.use('/climbers', climbersController);
 
-const mountainsController = require('./controllers/mountains.js');
-app.use('/mountains', mountainsController);
+const climbsController = require('./controllers/climbs.js');
+app.use('/climbs', climbsController);
 
 const sessionsController = require('./controllers/session.js');
 app.use('/sessions', sessionsController);
 
 
-//climber route to the homepage
 app.get('/', (req, res)=>{
-      Climber.find({}, (err, foundClimbers)=>{
-      res.render('index.ejs', {
-        climbers: foundClimbers
-        });
-    });
+    res.render('index.ejs');
 });
 
 
-//mountains route to the homepage
-app.get('/', (req, res)=>{
-      Mountain.find({}, (err, foundMountains)=>{
-      res.render('index.ejs', {
-        mountains: foundMountains
-        });
-    });
-});
+//
+// //climber route to the homepage
+// app.get('/', (req, res)=>{
+//       Climber.find({}, (err, foundClimbers)=>{
+//       res.render('index.ejs', {
+//         climbers: foundClimbers
+//         });
+//     });
+// });
+//
+//
+// //climbs route to the homepage
+// app.get('/', (req, res)=>{
+//       Climb.find({}, (err, foundClimbs)=>{
+//       res.render('index.ejs', {
+//         climbs: foundClimbs
+//         });
+//     });
+// });
 
 
 

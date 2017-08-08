@@ -5,7 +5,7 @@
     <title></title>
   </head>
             <header>
-                        <h1>Edit <%=mountain.fourteeners%>'s Info</h1>
+                        <h1>Edit <%=climb.fourteeners%>'s Summits</h1>
 
                         <nav>
                             <ul>
@@ -14,15 +14,16 @@
                                   </li>
 
                                   <li>
-                                        <a href="/mountains">14eener Index</a>
+                                        <a href="/climbs">14eener Index</a>
                                   </li>
                             </ul>
                         </nav>
             </header>
 
             <main>
-                      <form action="/mountains/<%=mountain._id%>?_method=PUT" method="POST">
-                        New 14eener Summit (select one):
+              <h2>New 14eener Summit (select one):</h2>
+                      <form action="/climbs/<%=climb._id%>?_method=PUT" method="POST">
+
                         <select name="fourteeners">
                           <option value="Grays Peak">Grays Peak</option>
                           <option value="Torreys Peak">Torreys Peak</option>
@@ -86,8 +87,8 @@
 
                         </select> </br>
 
-                        Perks of this Peak Summit:
-                        <textarea type="text" name="peakPerks"> </textarea> </br>
+                        About This Climb:
+                        <textarea type="text" name="about"> </textarea> </br>
 
                         Summit Date:
                         <input type="text" name="date" /> </br>

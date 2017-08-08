@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const Mountain = require('./mountains.js');
+const Climb = require('./climbs.js');
 
 const climberSchema = mongoose.Schema({
         name: String,
         img: String,
         description: String,
-        mountains: [Mountain.schema]
+        climbs: [Climb.schema]
 });
 
 const Climber = mongoose.model('Climber', climberSchema);

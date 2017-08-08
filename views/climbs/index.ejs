@@ -19,7 +19,7 @@
                     </li>
 
                     <li>
-                            <a href="/mountains/new">Log a New Summit</a>
+                            <a href="/climbs/new">Log a New Summit</a>
                     </li>
 
                     <li>
@@ -32,13 +32,13 @@
     </header>
 
     <main>
-                <h2>14eener Summit Posts</h2>
+                <h2>14eener Summit Posts:</h2>
 
                 <ul>
-                        <% for(let i = 0; i < mountains.length; i++) { %>
+                        <% for(let i = 0; i < climbs.length; i++) { %>
                         <li>
-                              <a href="/mountains/<%=mountains[i]._id%>">
-                              <%=mountains[i].fourteeners%></a>
+                              <a href="/climbs/<%=climbs[i]._id%>">
+                              <%=climbs[i].fourteeners%></a>
                         </li>
                   <%  }  %>
                 </ul>

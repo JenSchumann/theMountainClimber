@@ -35,28 +35,6 @@ app.get('/', (req, res)=>{
 });
 
 
-//
-// //climber route to the homepage
-// app.get('/', (req, res)=>{
-//       Climber.find({}, (err, foundClimbers)=>{
-//       res.render('index.ejs', {
-//         climbers: foundClimbers
-//         });
-//     });
-// });
-//
-//
-// //climbs route to the homepage
-// app.get('/', (req, res)=>{
-//       Climb.find({}, (err, foundClimbs)=>{
-//       res.render('index.ejs', {
-//         climbs: foundClimbs
-//         });
-//     });
-// });
-
-
-
 
 
 

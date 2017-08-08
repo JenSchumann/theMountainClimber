@@ -17,6 +17,10 @@
                         <li>
                                 <a href="/climbs">14eener Summit Directory</a>
                         </li>
+                        <li>
+                                <a class="logout" href="/sessions/logout">Logout</a>
+
+                        </li>
 
                     </ul>
             </nav>
@@ -24,6 +28,15 @@
 
       <main>
                 <form action="/climbs" method="POST">
+
+                  <select name="climberId">
+                      <% for(let i = 0; i <climbers.length; i++) { %>
+                      <option value="<%=climbers[i]._id%>">
+                      <%=climbers[i].name%></option>
+                      <% } %>
+                  </select><br/>
+
+
                   New 14eener Summit (select one):
                   <select name="fourteeners">
                     <option value="Grays Peak">Grays Peak</option>

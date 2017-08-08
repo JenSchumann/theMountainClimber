@@ -5,26 +5,16 @@ const Climber = require('../models/climbers.js')
 const bcrypt = require('bcrypt');
 
 router.get('/', (req, res)=>{
-  console.log(req.session, ' this is req.session in auth route')
-	Climber.find({}, (err, foundClimbers)=>{
+  console.log(req.session, ' auth route')
+  if(req.session.logged){
+  Climber.find({}, (err, foundClimbers)=>{
 		res.render('climbers/index.ejs', {
 			climbers: foundClimbers
 		});
-	})
-});
-
-router.post('/', (req, res)=>{
-    // res.send(req.body);
-    req.body.climbId);
-      Climb.findById(req.body.climbId, (err, foundClimb)=>{
-        console.log(foundClimb);
-	         Climber.create(req.body, (err, createdClimber)=>{
-              foundClimb.climbs.push(createdClimb);
-              foundClimb.save((err,data)=>{
-		              res.redirect('/climbers');
-                });
-          });
-	   });
+	});
+  } else {
+    res.redirect('/sessions/login')
+  }
 });
 
 router.get('/new', (req, res)=>{
@@ -35,51 +25,56 @@ router.get('/new', (req, res)=>{
     });
 });
 
+router.post('/', (req, res)=>{
+    // res.send(req.body);
+      Climber.create(req.body, (err, createdClimber)=>{
+        res.redirect('/climbers');
+      });
+});
+
 router.get('/:id', (req, res)=>{
 	Climber.findById(req.params.id, (err, foundClimber)=>{
-    Climb.findOne({'climbs._id':req.params.id}, (err, foundClimb)=>{
+    // res.send(foundClimber);
+    Climb.findOne({'climbers._id':req.params.id}, (err, foundClimb)=>{
 		res.render('climbers/show.ejs', {
           climb: foundClimb,
           climber: foundClimber
-        }):
+        });
 		});
 	});
 });
 
 router.delete('/:id', (req, res)=>{
-
 	Climber.findByIdAndRemove(req.params.id, (err, foundClimber)=>{
-		const climbIds = [];
-		for (let i = 0; i < foundClimber.climbs.length; i++) {
-			climbIds.push(foundClimber.climbs[i]._id);
-		}
+    const climbIds = [];
+    for (let i = 0; i < foundClimber.climbs.length; i++) {
+      climbIds.push(foundClimber.climbs[i]._id);
+    }
 		Climb.remove(
-			{
-				_id : {
-					$in: climbIds
-				}
-			},
-			(err, data)=>{
-				res.redirect('/climbers');
-			}
-		);
-	});
+      {
+        _id : {
+          $in: climbIds
+        }
+      },
+      (err, data)=>{
+        res.redirect('/climbs');
+      }
+    );
+  });
 });
 
+
 router.get('/:id/edit', (req, res)=>{
-  console.log('=============================');
+  // console.log('=============================');
 	Climber.findById(req.params.id, (err, foundClimber)=>{
-    Climb.find({} (err, allClimbs)=>{
-      Climb.findOne({'climbs._id':req.params.id}, (err, foundClimberClimb=>{
+    // res.send(foundClimber);
+//problem here .... edit.ejs before show.ejs:
 		      res.render('climbers/edit.ejs', {
-			         climber: foundClimber,
-               climb: allClimbs,
-               climberClimb: foundClimberClimb
+			         climber: foundClimber
 		           });
             });
         });
-	   });
-});
+
 
 
 router.put('/:id', (req, res)=>{

@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Climber = require('./climbers.js');
+
 
 const climbSchema = mongoose.Schema({
         fourteeners: String,

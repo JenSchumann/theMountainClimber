@@ -31,6 +31,17 @@
                                 <li>
                                         <a href="/climbers">Climber Directory</a>
                                 </li>
+
+                                <li>
+
+                                        <a href="/climbs">14eener Summit Directory</a>
+
+                                </li>
+
+                                <li>
+                                        <a class="logout" href="/sessions/logout">Logout</a>
+
+                                </li>
                         </ul>
                   </nav>
 
@@ -52,13 +63,18 @@
               <section>
                       <h2>14eener Posts:</h2>
 
-                      <p> test
+                      <ul>
 
-                        <%=climber.climbs%> <br/>
+					                  <% for(let i = 0; i < climber.climbs.length; i++){ %>
+						                           <li><a href="/climbs/<%=climber.climbs[i]._id%>">
+                                       <%=climber.climbs[i].fourteeners%></a></li><br/>
+                                       <li> <img src="<%=climber.climbs[i].img;%>"></li><br/>
+                                       <li><%=climber.climbs[i].about%></li><br/>
+                                       <li><%=climber.climbs[i].date%></li><br/>
+                            <% } %>
+				              </ul>
 
-                      
-
-                      </p>
+              </section>
 
 
 

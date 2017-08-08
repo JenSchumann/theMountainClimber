@@ -1,0 +1,47 @@
+* {
+  font-family: 'Bowlby One', cursive;
+
+}
+
+body {
+
+background-image: url(" https://static.pexels.com/photos/316591/pexels-photo-316591.jpeg");
+background-size: cover;
+background-repeat: no-repeat;
+font-size: 25px;
+color: white;
+text-align: center;
+
+}
+
+.container {
+    height: 70%;
+    width: 60%;
+    margin: 0 auto;
+    background-color: #0d5465;
+    opacity: .70;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.link: visited {
+    color: white;
+}
+
+.link: hover {
+    color: white;
+}
+
+li {
+    list-style-type: none;
+}

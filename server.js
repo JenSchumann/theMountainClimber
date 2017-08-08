@@ -6,9 +6,18 @@ const methodOverride = require('method-override');
 const Climber = require('./models/climbers.js');
 const Mountain = require('./models/mountains.js');
 
+
 //middleware
-app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static('public'));
+const session = require('express-session');
+
+app.use(session({
+  secret: "polynesion rugs are the best to have in your home",
+  resave: false,
+  saveUninitialized: false
+}));
 
 //to use the controllers for the 2 models
 const climbersController = require('./controllers/climbers.js');
@@ -16,6 +25,9 @@ app.use('/climbers', climbersController);
 
 const mountainsController = require('./controllers/mountains.js');
 app.use('/mountains', mountainsController);
+
+const sessionsController = require('./controllers/session.js');
+app.use('/sessions', sessionsController);
 
 
 //climber route to the homepage

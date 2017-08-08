@@ -50,19 +50,29 @@
               </section>
 
               <section>
-                      <h2>14eeners Summitted by this Climber:</h2>
+                      <h2>14eener Posts:</h2>
 
                       <p> test
-                        <%=climber.mountains.fourteeners%> <br/>
+                        <%console.log(climber);%>
+                        <%=climber.fourteeners%> <br/>
+
                       </p>
 
                       <p> test 2
                         <%=climber.mountains.peakPerks%> <br/>
                       </p>
 
-                      <p> test 2
+                      <p> test 3
                         <%=climber.mountains.peakPerks%> <br/>
+
+
+                      <p> test 4
+                        <img src="<%=climber.mountains.img;%>"> <br/>
                       </p>
+
+                      <p> test 5
+                        <% for(let i = 0; i < climber.mountains.length; i++) { %>
+                        }
 
               </section>
 

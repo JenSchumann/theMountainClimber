@@ -1,92 +1,75 @@
 const express = require('express');
-const Climber = require('../models/climbers.js');
-const Mountain = require('../models/mountains.js');
 const router = express.Router();
+const Mountain = require('../models/mountains.js');
+const Climber = require('../models/climbers.js')
+const bcrypt = require('bcrypt');
 
-
-//home page
 router.get('/', (req, res)=>{
-  //need to go back and add session
-    Climber.find({}, (err,foundClimbers)=>{
-      console.log('this climber', foundClimbers);
-        res.render('climbers/index.ejs', {
-            climbers: foundClimbers
-        });
-    })
+  console.log(req.session, ' this is req.session in auth route')
+	Climber.find({}, (err, foundClimbers)=>{
+		res.render('climbers/index.ejs', {
+			climbers: foundClimbers
+		});
+	})
 });
 
-//create route
 router.post('/', (req, res)=>{
-    Climber.create(req.body, (err, createdClimber)=>{
-        res.redirect('/climbers');
-    });
+  // res.send(req.body);
+	Climber.create(req.body, (err, createdClimber)=>{
+    res.send(createdClimber);
+    // createdClimber.mountains.push(req.body.fourteeners);
+		// res.redirect('/climbers');
+	});
 });
 
-//add new climber
 router.get('/new', (req, res)=>{
-      res.render('climbers/new.ejs');
-});
-
-//delete route
-router.delete('/:id', (req, res)=>{
-    Climber.findByIdAndRemove(req.params.id, ()=>{
-        res.redirect('/climbers');
-    })
-})
-
-//edit route
-router.get('/:id/edit', (req, res)=>{
-    Climber.findById(req.params.id, (err, foundClimber)=>{
-        res.render('climbers/edit.ejs', {
-            climber: foundClimber
+  Mountain.find({}, (err, allMountains)=>{
+        res.render('climbers/new.ejs', {
+            mountains: allMountains
         });
     });
 });
 
-//for posting edits from user as an update
+router.get('/:id', (req, res)=>{
+	Climber.findById(req.params.id, (err, foundClimber)=>{
+		res.render('climbers/show.ejs', {
+			climber: foundClimber
+		});
+	});
+});
+
+router.delete('/:id', (req, res)=>{
+
+	Climber.findByIdAndRemove(req.params.id, (err, foundClimber)=>{
+		const mountainIds = [];
+		for (let i = 0; i < foundClimber.mountains.length; i++) {
+			mountainIds.push(foundClimber.mountains[i]._id);
+		}
+		Mountain.remove(
+			{
+				_id : {
+					$in: mountainIds
+				}
+			},
+			(err, data)=>{
+				res.redirect('/climbers');
+			}
+		);
+	});
+});
+
+router.get('/:id/edit', (req, res)=>{
+	Climber.findById(req.params.id, (err, foundClimber)=>{
+		res.render('climbers/edit.ejs', {
+			climber: foundClimber
+		});
+	});
+});
 
 router.put('/:id', (req, res)=>{
-      Climber.findByIdAndUpdate(req.params.id, req.body, ()=>{
-          res.redirect('/climbers');
-      });
+	Climber.findByIdAndUpdate(req.params.id, req.body, ()=>{
+		res.redirect('/climbers');
+	});
 });
-
-
-
-
-
-
-
-//avoid this handling /new by placing it towards bottom of the file
-//post & SHOW route
-router.get('/:id', (req, res)=>{
-    Climber.findById(req.params.id, (err, foundClimber)=>{
-        res.render('climbers/show.ejs', {
-            climber: foundClimber
-        });
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;

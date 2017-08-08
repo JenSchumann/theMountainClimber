@@ -31,12 +31,23 @@
                           </ul>
                     </nav>
           </header>
-          <section>
+        <section>
+            <div class="container">
+
+            </div>
+            <div="climberPost">
                     <ul>
+                      <% for(let i = 0; i < climber.climbs.length; i++) { %>
+                        <li><a href="/climbs/<%=climber.climbs[i]._id%>">
+                        <img src="<%=climber.climbs[i].img;%>"></a></li><br/>
+                        <li><%=climber.climbs[i].about%></li><br/>
+                        <li><%=climber.climbs[i].date%></li><br/>
+
+                    <% } %>
 
                     </ul>
-
-          </section>
+          </div></div>
+      </section>
 
           <section>
                     <a href="/climbs/<%=climb._id%>/edit">Edit</a>

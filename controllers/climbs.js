@@ -37,12 +37,63 @@ router.get('/new', (req, res)=>{
 
 router.get('/:id', (req, res)=>{
   Climb.findById(req.params.id, (err, foundClimb) =>{
-    console.log(foundClimb);
-    res.render('climbs/show.ejs', {
-      climb: foundClimb
-    });
+    Climber.findOne({'climbs._id':req.params.id}, (err, foundClimber)=>{
+      // console.log(foundClimb);
+      res.render('climbs/show.ejs', {
+        climber: foundClimber,
+        climb: foundClimb
+      });
+    })
   });
 });
+
+
+router.put('/:id', (req, res)=>{
+    Climb.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedClimb)=>{
+        Climb.findOne({ 'climbs._id' : req.params.id }, (err, foundClimber)=>{
+			if(foundClimber._id.toString() !== req.body.climberId){
+				foundClimber.climbs.id(req.params.id).remove();
+				foundClimber.save((err, savedFoundClimber)=>{
+					Climber.findById(req.body.climberId, (err, newClimber)=>{
+						newClimber.climbs.push(updatedClimb);
+						newClimber.save((err, savedNewClimber)=>{
+			                res.redirect('/climbs/'+req.params.id);
+			            });
+					});
+	            });
+			} else {
+				foundClimber.climbs.id(req.params.id).remove();
+	            foundClimber.climbs.push(updatedClimb);
+	            foundClimber.save((err, data)=>{
+	                res.redirect('/climbs/'+req.params.id);
+	            });
+			}
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module.exports = router;

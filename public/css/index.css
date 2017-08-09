@@ -1,0 +1,46 @@
+body {
+
+  background-color: rgb(215, 226, 255);
+  height: 100%;
+  padding-top: 70px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 10px;
+}
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  opacity: .5;
+  text-align: center;
+  bottom: 0;
+  color: black;
+  margin: 0 auto;
+  position: sticky;
+}
+
+li {
+  list-style: none;
+}

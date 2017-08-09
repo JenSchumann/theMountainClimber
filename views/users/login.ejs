@@ -14,8 +14,10 @@
 
 <header>
 
+  <div class="container">
 
-  <h1>Login Page</h1>
+
+  <h1>Login</h1>
 
 
     <nav>
@@ -43,11 +45,11 @@
 
 </header>
 <form  action="/sessions/login" method="POST">
-    <p>Username:
+    <p class="enter">Username:
    <input type="text" name="username" value=""> <br/>
    </p>
 
-   <p>Password:
+   <p class="enter">Password:
    <input type="password" name="password" value=""> <br/>
    </p>
    <button>Login</button>
@@ -59,6 +61,6 @@
   <%= message %>
 
 <% } %>
-
+  </div>
 <% include ../partials/footer.ejs %>
 </body>

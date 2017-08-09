@@ -7,30 +7,26 @@
 
       <header>
 
+          <img src="https://static.pexels.com/photos/207385/pexels-photo-207385.jpeg" class="img-responsive" alt="Responsive image">
+
 
         <h1>Edit <%=climber.name%>'s Profile</h1>
 
 
-          <nav>
+          <nav class="navbar navbar-inverse">
 
-                <ul class="list-inline">
+                    <a href="/" class="btn btn-default" role="button">Home</a>
 
+                    <a href="/climbers" class="btn btn-default" role="button">Climber Directory</a>
 
-                      <li>
-                              <a href="/">Home</a>
-                      </li>
+                    <a href="/climbs/new" class="btn btn-default" role="button">Log a New Summit</a>
 
-                      <li>
-                              <a href="/climbers">Climber Directory</a>
-                      </li>
+                    <a href="/climbs" class="btn btn-default" role="button">14eener Summit Directory</a>
 
-                      <li>
-                              <a class="logout" href="/sessions/logout">Logout</a>
-
-                      </li>
-                </ul>
+                    <a href="/sessions/logout" class="btn btn-default" role="button">Logout</a>
 
           </nav>
+
 
       </header>
 

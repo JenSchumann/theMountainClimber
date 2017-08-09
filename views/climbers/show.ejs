@@ -20,28 +20,21 @@
 
                   <h1>Profile Page for <%=climber.name%></h1>
 
-                  <nav>
-                        <ul>
-                                <li>
-                                        <a href="/">Home</a>
+                  <nav class="navbar navbar-inverse">
 
-                                </li>
+                            <a href="/" class="btn btn-default" role="button">Home</a>
 
-                                <li>
-                                        <a href="/climbers">Climber Directory</a>
-                                </li>
+                            <a href="/climbers/new" class="btn btn-default" role="button">Create Climber Profile</a>
 
-                                <li>
+                            <a href="/climbs/new" class="btn btn-default" role="button">Log a New Summit</a>
 
-                                        <a href="/climbs">14eener Summit Directory</a>
+                            <a href="/climbers" class="btn btn-default" role="button">Climber Directory</a>
 
-                                </li>
+                            <a href="/climbs" class="btn btn-default" role="button">14eener Summit Directory</a>
 
-                                <li>
-                                        <a class="logout" href="/sessions/logout">Logout</a>
 
-                                </li>
-                        </ul>
+                            <a href="/sessions/logout" class="btn btn-default" role="button">Logout</a>
+
                   </nav>
 
     </header>
@@ -96,7 +89,7 @@
               </section>
     </main>
 
-    <% include ../partials/footer.ejs %>
+    
 
   </body>
 </html>

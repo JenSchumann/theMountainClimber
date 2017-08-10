@@ -40,9 +40,14 @@ div, body{
   display: block;
   position: absolute;
   padding: 0.5em;
-
 }
 
+.text-uppercase {
+  background-color: #002350;
+  color: white;
+  padding: .5em;
+  
+}
 
 h1, h2 {
   text-align: center;
@@ -88,11 +93,11 @@ h1, h2 {
 }
 
 .list-group {
-  opacity: .45;
+  opacity: .65;
   padding-bottom: 1.5px;
   border-bottom: 1.5px;
   margin-bottom: 1.5px;
-  color: black;
+  /*color: black;*/
 }
 
 .fever {

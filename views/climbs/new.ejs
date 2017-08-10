@@ -26,7 +26,9 @@
       </header>
 
       <main>
-                <form action="/climbs" method="POST">
+              <form action="/climbs" method="POST">
+                  <hr>
+                  <p class="text-uppercase">Select Climber</p>
 
                   <select name="climberId">
                       <% for(let i = 0; i <climbers.length; i++) { %>
@@ -34,7 +36,7 @@
                       <%=climbers[i].name%></option>
                       <% } %>
                   </select><br/>
-
+                  <hr>
 
                   New 14eener Summit (select one):
                   <select name="fourteeners">

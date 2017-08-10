@@ -43,10 +43,11 @@ div, body{
 }
 
 .text-uppercase {
-  background-color: #002350;
+  border-radius: 3px;
+  background-color: none;
   color: white;
   padding: .5em;
-  
+
 }
 
 h1, h2 {

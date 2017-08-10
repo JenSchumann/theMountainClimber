@@ -27,16 +27,42 @@
 
 
           <main>
+            <div class="container">
+                  <form action="/climbers" method="POST">
+                        <div class="tbody">
+                            <div class="table-row-group">
+                                <div class="input-group">
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                  </span>
+                                  <input type="text" class="form-control" name="name" placeholder="Username" /> </br>
 
-                    <form action="/climbers" method="POST">
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-picture"></span>
+                                  </span>
+                                  <input type="text" class="form-control" name="img" placeholder="Photo URL" /> </br>
 
-                      Name:<input type="text" name="name" /> </br>
-                      Image URL: <input type="text" name="img" /> </br>
-                      Description: <textarea type="text" name="description"></textarea></br>
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                  </span>
+                                  <input type="text" class="form-control" name="description" placeholder="About You" /> </br>
 
-                      <input type="submit" name="submit" value="Create Climber"/>
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-circle-arrow-up"></span>
+                                  </span>
+                                  <input type="submit" class="form-control" name="submit" placeholder="Create Climber" /> </br>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+
+
+
 
                     </form>
+            </div>
           </main>
 
   <% include ../partials/footer.ejs %>

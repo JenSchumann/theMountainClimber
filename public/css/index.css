@@ -79,12 +79,24 @@ h1, h2 {
     list-style: none;
     text-align: center;
     justify-content: space-between;
-    padding: .5em;
+    padding: 1em;
   }
 
 .enter {
     color: #EFC74E;
     font-size: 20px;
+}
+
+.list-group {
+  opacity: .45;
+  padding-bottom: 1.5px;
+  border-bottom: 1.5px;
+  margin-bottom: 1.5px;
+  color: black;
+}
+
+.fever {
+  color: #EFC74E;
 }
 
 /* Wrapper for page content to push down footer */

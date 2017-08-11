@@ -19,7 +19,7 @@ router.post('/', (req, res)=>{
             foundClimber.save((err, data)=>{
                 // res.redirect('/climbs');
                 //updating this one currently:
-                res.redirect('/climbers'+req.params.id);
+                res.redirect('/climbers');
             });
         });
     });

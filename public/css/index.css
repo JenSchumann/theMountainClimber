@@ -61,6 +61,14 @@ h1, h2 {
   height: auto;
 }
 
+.input-group {
+  height: 2em;
+  width: 60%;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .container {
   width: auto;
   max-width: 680px;

@@ -27,10 +27,16 @@
         <section>
             <div class="container">
 
-            </div>
-            <div="climberPost">
+              <div class="row">
+              <div class="col-md-8 col-md-8">
+              <div class="thumbnail">
+              <div class="caption">
+
                     <ul>
                       <% for(let i = 0; i < climber.climbs.length; i++) { %>
+                        <h2>Summit Post by:</h2>
+                         <a href="/climbs/<%=climber.climbs[i]._id%>">
+                         <%=climber.name%></a><br/>
                         <li><a href="/climbs/<%=climber.climbs[i]._id%>">
                         <img src="<%=climber.climbs[i].img;%>"></a></li><br/>
                         <li><%=climber.climbs[i].about%></li><br/>
@@ -39,6 +45,9 @@
                     <% } %>
 
                     </ul>
+                  </div>
+                  </div>
+                  </div>
           </div></div>
       </section>
 

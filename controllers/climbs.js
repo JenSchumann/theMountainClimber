@@ -17,7 +17,9 @@ router.post('/', (req, res)=>{
         Climb.create(req.body, (err, createdClimb)=>{
             foundClimber.climbs.push(createdClimb);
             foundClimber.save((err, data)=>{
-                res.redirect('/climbs');
+                // res.redirect('/climbs');
+                //updating this one currently:
+                res.redirect('/climbers'+req.params.id);
             });
         });
     });
@@ -40,6 +42,7 @@ router.get('/:id', (req, res)=>{
     Climber.findOne({'climbs._id':req.params.id}, (err, foundClimber)=>{
       // console.log(foundClimb);
       res.render('climbs/show.ejs', {
+
         climber: foundClimber,
         climb: foundClimb
       });
@@ -58,6 +61,7 @@ router.put('/:id', (req, res)=>{
 						newClimber.climbs.push(updatedClimb);
 						newClimber.save((err, savedNewClimber)=>{
 			                res.redirect('/climbs/'+req.params.id);
+                      // res.redirect('/climbers/'+req.params.id);
 			            });
 					});
 	            });

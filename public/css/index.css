@@ -50,6 +50,15 @@ div, body{
 
 }
 
+.row {
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  height: 50%;
+  width: auto;
+
+}
+
 h1, h2 {
   text-align: center;
 }

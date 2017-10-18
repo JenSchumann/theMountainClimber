@@ -4,6 +4,7 @@ const Climb = require('../models/climbs.js');
 const Climber = require('../models/climbers.js')
 const bcrypt = require('bcrypt');
 
+
 router.get('/', (req, res)=>{
   console.log(req.session, ' auth route')
   if(req.session.logged){
@@ -82,5 +83,6 @@ router.put('/:id', (req, res)=>{
 		res.redirect('/climbers');
 	});
 });
+
 
 module.exports = router;

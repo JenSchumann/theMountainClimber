@@ -24,7 +24,6 @@
 
         <a href="/climbs" class="btn btn-default" role="button">Summits</a>
 
-
         <a href="/sessions/logout" class="btn btn-default" role="button">Logout</a>
 
 </nav>
@@ -33,30 +32,26 @@
 
 
     <main>
-          <h2>Climber Directory</h2>
+        <h2>Climber Directory</h2>
 
-          <div class="list-group">
+          <div>
 
-              <% for(let i = 0; i < climbers.length; i++) { %>
+            <% for(let i = 0; i < climbers.length; i++) { %>
 
+                <a href="/climbers/<%=climbers[i]._id%>"> %>
 
-                            <a href="/climbers/<%=climbers[i]._id%>" class="list-group-item active">
+                  <h4 class="list-group-item-heading"><%=climbers[i].name%>
 
-                                <h4 class="list-group-item-heading"><%=climbers[i].name%> | </h4>
-                                <p class="list-group-item-text"><%=climbers[i].description%></p> <br/>
-                            </a>
-                            <br/>
-                  <% } %>
-                  <div class="clearfix"></div>
-                  <hr>
+                </a>
+                <br/>
+            <% } %>
+
           </div>
-
-
     </main>
 
 
 
-  </div></div>
+
       <% include ../partials/footer.ejs %>
   </body>
 </html>

@@ -35,9 +35,9 @@
                     <ul>
                       <% for(let i = 0; i < climber.climbs.length; i++) { %>
                         <h2>Summit Post by:</h2>
-                         <a href="/climbs/<%=climber.climbs[i]._id%>">
+                         <a href="/climbs/<%=climber.climbs[i].id%>">
                          <%=climber.name%></a><br/>
-                        <li><a href="/climbs/<%=climber.climbs[i]._id%>">
+                        <li><a href="/climbs/<%=climber.climbs[i].id%>">
                         <img src="<%=climber.climbs[i].img;%>"></a></li><br/>
                         <li><%=climber.climbs[i].about%></li><br/>
                         <li><%=climber.climbs[i].date%></li><br/>

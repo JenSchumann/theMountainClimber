@@ -4,40 +4,23 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
+    <% include ../partials/loggedInNav.ejs %>
 
 
-          <header>
+          <main class="profile">
             <h1>Create Climber Profile</h1>
-
-
-          <nav class="navbar navbar-inverse">
-
-                    <a href="/" class="btn btn-default" role="button">Home</a>
-
-                    <a href="/climbers" class="btn btn-default" role="button">Climber Directory</a>
-
-                    <a href="/climbs/new" class="btn btn-default" role="button">Log a New Summit</a>
-
-                    <a href="/climbs" class="btn btn-default" role="button">14eener Summit Directory</a>
-
-
-                    <a href="/sessions/logout" class="btn btn-default" role="button">Logout</a>
-
-          </nav>
-
-
-          <main>
             <div class="container">
                   <form action="/climbers" method="POST">
                         <div class="tbody">
                             <div class="table-row-group">
+
                                 <div class="input-group">
                                   <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-user"></span>
                                   </span>
                                   <input type="text" class="form-control" name="name" placeholder="Profile Name" /> </br> </div>
 
-                                  <hr>
+
 
                                 <div class="input-group">
                                   <span class="input-group-addon">
@@ -45,7 +28,7 @@
                                   </span>
                                   <input type="url" class="form-control" name="img" placeholder="Photo URL" /> </br> </div>
 
-                                  <hr>
+
 
                                 <div class="input-group">
                                   <span class="input-group-addon">
@@ -53,7 +36,7 @@
                                   </span>
                                   <input type="text" class="form-control" name="description" placeholder="About You" /> </br> </div>
 
-                                  <hr>
+
 
                                 <div class="input-group">
                                   <span class="input-group-addon">
@@ -61,16 +44,8 @@
                                   </span>
                                   <input type="submit" class="form-control" name="submit" placeholder="Create Climber" /> </br> </div>
 
-                                  <hr>
-
                               </div>
                             </div>
-
-
-
-
-
-
 
                     </form>
             </div>

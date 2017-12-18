@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const Climber = require('./models/climbers.js');
 const Climb = require('./models/climbs.js');
+const User = require('./models/users.js');
 
 
 //middleware
@@ -19,41 +20,33 @@ app.use(session({
   saveUninitialized: false
 }));
 
-//to use the controllers for the 2 models
+//to use the controllers for the models
 const climbersController = require('./controllers/climbers.js');
 app.use('/climbers', climbersController);
 
 const climbsController = require('./controllers/climbs.js');
 app.use('/climbs', climbsController);
 
-const sessionsController = require('./controllers/session.js');
+const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
 
-app.get('/', (req, res)=>{
-    res.render('index.ejs');
+
+// index route
+app.get('/', function(req, res){
+    res.render('index.ejs', {
+      currentUser: req.session.currentUser
+    });
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.get('/app', function(req, res){
+    if(req.session.currentuser){
+        res.send('the party');
+    } else {
+        res.redirect('/sessions/new');
+    }
+});
 
 
 

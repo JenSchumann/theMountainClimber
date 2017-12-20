@@ -1,36 +1,40 @@
 * {
   font-family: 'Bowlby One', cursive;
-
 }
 
-html, body{
-  height: 100%;
+.login, .register, .general {
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-body {
+
+/* body { */
 			/* background-image: url("https://static.pexels.com/photos/326235/pexels-photo-326235.jpeg") ; */
-			background-position: center center;
+			/* background-position: center center;
 			background-repeat:  no-repeat;
 			background-attachment: fixed;
 			background-size:  cover;
 			/* background-color: #999; */
-      position: relative;
+      /* position: relative;
       text-align: center;
-      justify-content: center;
+      justify-content: center; */
 
-}
+/* }
 
 div, body{
   margin: 0;
   padding: 0;
-  font-family: exo, sans-serif;
+  font-family: exo, sans-serif; */
 
-}
-.wrapper {
+/* } */
+/* .wrapper {
   height: 100%;
   width: 100%;
-}
+} */
 
-.message {
+/* .message {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -43,9 +47,9 @@ div, body{
   color: #fff;
   padding: 0.5em;
 
-}
+} */
 
-.jumbotron {
+/* .jumbotron {
   background-color: #002350;
   justify-content: center;
   justify-content: center;
@@ -63,45 +67,45 @@ div, body{
 .container {
 
     /*max-width: 680px;*/
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /*background-color: #002350;*/
     /*color: white;*/
-    text-decoration: none;
-    justify-content: center;
+    /* text-decoration: none;
+    justify-content: center; */
     /*margin-top: 3%;
     margin-bottom: 3%;*/
 
-    padding: 0 15px;
-}
+    /* padding: 0 15px;
+} */
 
-.link, visited, hover {
+/* .link, visited, hover {
     text-decoration: none;
     color: white;
     font-size: 20px;
     display: inline-block;
-}
+} */
 
-li {
+/* li {
     list-style-type: none;
     text-decoration: none;
     font-size: 20px;
     display: inline-block;
-}
+} */
 
-.register, .profile {
+/* .register, .profile {
   padding-top: 70px;
-}
+} */
 
 
 /* Wrapper for page content to push down footer */
-#wrap {
+/* #wrap {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -30px;
+  /* margin: 0 auto -30px; */
   /* Pad bottom by footer height */
-  padding: 0 0 30px;
-}
+  /* padding: 0 0 30px; */
+/* } */
 
 .modal-body {
   width: 90%;
@@ -114,30 +118,9 @@ li {
   padding: 1em;
 }
 
-
-.climberShowPage {
-  font-size: 3rem;
-	color: white;
+#footer {
   text-align: center;
-  border-radius: 50px;
-}
-
-.summitPostModal {
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Set the fixed height of the footer here */
-#footer, navbar navbar-default navbar-fixed-bottom {
-  height: 30px;
-  text-align: center;
   justify-content: center;
-  bottom: 0;
-  color: white;
-  width: 100%;
-  color: #002350;
-  position: absolute;
+  /* position: sticky; */
 }

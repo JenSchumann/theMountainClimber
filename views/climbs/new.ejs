@@ -5,25 +5,16 @@
   </head>
   <body>
 
-      <header>
+    <header>
+
+      <% include ../partials/nav.ejs %>
+
+    </header>
+
             <h1>Record a New Summit</h1>
 
 
-            <nav class="navbar navbar-inverse">
-
-                      <a href="/" class="btn btn-default" role="button">Home</a>
-
-                      <a href="/climbers/new" class="btn btn-default" role="button">Create Climber Profile</a>
-
-                      <a href="/climbers" class="btn btn-default" role="button">Climber Directory</a>
-
-                      <a href="/climbs" class="btn btn-default" role="button">14eener Summit Directory</a>
-
-
-                      <a href="/sessions/logout" class="btn btn-default" role="button">Logout</a>
-
-            </nav>
-      </header>
+            
 
       <main>
               <form action="/climbs" method="POST">

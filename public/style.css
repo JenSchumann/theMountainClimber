@@ -7,12 +7,12 @@ html, body{
   height: 100%;
 }
 body {
-			background-image: url("https://static.pexels.com/photos/326235/pexels-photo-326235.jpeg") ;
+			/* background-image: url("https://static.pexels.com/photos/326235/pexels-photo-326235.jpeg") ; */
 			background-position: center center;
 			background-repeat:  no-repeat;
 			background-attachment: fixed;
 			background-size:  cover;
-			background-color: #999;
+			/* background-color: #999; */
       position: relative;
       text-align: center;
       justify-content: center;
@@ -102,6 +102,18 @@ li {
   /* Pad bottom by footer height */
   padding: 0 0 30px;
 }
+
+.modal-body {
+  width: 90%;
+  margin: auto;
+  padding: 1em;
+}
+
+.modal-header {
+  text-align: center;
+  padding: 1em;
+}
+
 
 .climberShowPage {
   font-size: 3rem;

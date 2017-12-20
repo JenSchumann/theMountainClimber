@@ -9,6 +9,7 @@
   "author": "Jen Schumann",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.7",
     "bcrypt": "^1.0.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",

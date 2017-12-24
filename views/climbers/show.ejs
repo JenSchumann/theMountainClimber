@@ -3,12 +3,6 @@
   <head>
     <% include ../partials/head.ejs %>
 
-    <style media="screen">
-          img {
-            height: 400px;
-            width: 400px;
-          }
-        </style>
   </head>
       <header>
 
@@ -17,34 +11,43 @@
       </header>
 
 
-<!-- climber post modal -->
-<div class="modal fade bd-climbers-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content data-spy="scroll"">
-      <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Have the Fever? <%=climber.name;%></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
+<!-- climber post card -->
+
+<div class="cardClimberShow" style="width: 65%;">
+  <img class="card-img-top" src="<%=climber.img;%>" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title"><%=climber.name;%></h4>
+    <!-- need to update schema -->
+    <p class="card-text">What I like most about climbing 14eeners: The sense of accomplishment I have when I reach the summit</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">About: <%=climber.description;%></li>
+
+     <% for(let i = 0; i < climber.climbs.length; i++){ %>
+              <li class="list-group-item">14eener Summits: <a href="/climbs/<%=climber.climbs[i]._id%>">
+              <%=climber.climbs[i].fourteeners%></a></li>
+              <!-- need to update schema -->
+              <li class="list-group-item">Climber level: Beginner</li>
+              <!-- need to update schema -->
+              <li class="list-group-item">Favorite Mountaineering Gear: My waterproof hiking boots</li>
+              <!-- need to update schema -->
+              <li class="list-group-item">14eener Fever Advice: Start as early as possible during the day!</li>
+              <!-- need to update schema -->
+              <li class="list-group-item">14eeners I hope to climb: Quandary, Crestone Needle, Snowmass Mountain</li>
+
+    <% } %>
+  </ul>
+  <div class="card-body">
+    <!-- update links for logged in users to be able to make edits only: -->
+    <a href="#" class="card-link">Update Profile</a>
+    <a href="#" class="card-link">Add New Summit</a>
+
+    <!-- build functionality for users to comment and the comments are tied to their own user profile: -->
+    <a href="#" class="card-link">Comment</a>
+  </div>
+</div>
 
 
-                              <h2><%=climber.name;%><br/></h2>
-                              <img src="<%=climber.img;%>"> <br/>
-                              <h3>About: <%=climber.description;%></h3><br/>
-                            </div>
-
-
-                            <!-- bottom of modal: -->
-
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                            </div>
-                            </div><!-- /.modal-content -->
-                            </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
 
 
 
@@ -62,14 +65,6 @@
                                        <li><%=climber.climbs[i].date%></li><br/>
                             <% } %>
 				              </ul>
-
-
-
-
-
-
-
-
 
 
               <section>
@@ -94,7 +89,7 @@
 
 
 
-    </main>
+
 
 
 

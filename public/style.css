@@ -10,6 +10,39 @@
   margin-right: auto;
 }
 
+.col-sm-3 {
+/* border: 1px solid hotpink; */
+margin-left: 6%;
+margin-bottom: 3%;
+}
+
+.card {
+ text-align: center;
+}
+
+
+.card-columns {
+  /* @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  } */
+}
+
+.cardClimberShow {
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  border: 1px solid darkgray;
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Bowlby One', cursive;
+}
+
 /* body { */
 			/* background-image: url("https://static.pexels.com/photos/326235/pexels-photo-326235.jpeg") ; */
 			/* background-position: center center;

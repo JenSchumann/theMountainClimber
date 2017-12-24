@@ -20,6 +20,7 @@
 
       <h1>You Have Climbed This Mountain</h1>
 
+<!-- these options need to be embedded w/in the main nav as dropdowns -->
       <nav class="navbar navbar-inverse">
 
         <a href="/" class="btn btn-default" role="button">Home</a>
@@ -42,22 +43,30 @@
     <main>
         <h2>Climber Directory</h2>
 
-          <div>
+        <!-- create a search bar here by climber name -->
+        <br>
+        <br>
+
+<% for(let i = 0; i < climbers.length; i++) { %>
+
+    <div class="col-sm-3 d-inline-flex">
+
+        <div class="card bg-warning">
+
+                <img class="card-img-top img-fluid"  src="<%=climbers[i].img;%>" alt="Card image cap">
+                <div class="card-block">
+                      <h4 class="card-title"><%=climbers[i].name%></h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="/climbers/<%=climbers[i]._id%>" class="btn btn-primary">See Profile</a>
+                      <br>
+                      <br>
+                </div>
+        </div>
+
+    </div>
 
 
-            <!-- <a class="nav-link" data-toggle="modal" data-target=".bd-about-modal-lg" class="nav-link disabled" href="#about">About</a> -->
-
-            <% for(let i = 0; i < climbers.length; i++) { %>
-                <a data-toggle="modal" data-target=".bd-climbers-modal-lg" href="/climbers/<%=climbers[i]._id%>">
-                  <h4 class="list-group-item-heading"><%=climbers[i].name%>
-                </a>
-                <br/>
-            <% } %>
-
-          </div>
-    </main>
-
-
+<% } %>
 
 
       <% include ../partials/footer.ejs %>

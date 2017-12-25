@@ -20,24 +20,28 @@
   <div class="card-body">
     <h4 class="card-title"><%=climber.name;%></h4>
     <!-- need to update schema -->
-    <p class="card-text">What I like most about climbing 14eeners: The sense of accomplishment I have when I reach the summit</p>
+    <p class="card-text">What I like most about climbing 14eeners: <%=climber.whatLoveREClimb14eenrs;%></p>
+
+    <!-- The sense of accomplishment I have when I reach the summit -->
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">About: <%=climber.description;%></li>
+    <!-- need to update schema -->
+    <li class="list-group-item">Climber level: <%=climber.climberLevel;%></li>
+    <!-- need to update schema -->
+    <li class="list-group-item">Favorite Mountaineering Gear: <%=climber.faveClimbGear;%></li>
+    <!-- need to update schema -->
+    <li class="list-group-item">14eener Fever Advice: <%=climber.fourteenerClimbAdvice;%></li>
+    <!-- need to update schema -->
+    <li class="list-group-item">14eeners I hope to climb:
+    <%=climber.wannaClimbThese14eenrs;%></li>
 
      <% for(let i = 0; i < climber.climbs.length; i++){ %>
               <li class="list-group-item">14eener Summits: <a href="/climbs/<%=climber.climbs[i]._id%>">
               <%=climber.climbs[i].fourteeners%></a></li>
-              <!-- need to update schema -->
-              <li class="list-group-item">Climber level: Beginner</li>
-              <!-- need to update schema -->
-              <li class="list-group-item">Favorite Mountaineering Gear: My waterproof hiking boots</li>
-              <!-- need to update schema -->
-              <li class="list-group-item">14eener Fever Advice: Start as early as possible during the day!</li>
-              <!-- need to update schema -->
-              <li class="list-group-item">14eeners I hope to climb: Quandary, Crestone Needle, Snowmass Mountain</li>
 
-    <% } %>
+
+      <% } %>
   </ul>
   <div class="card-body">
     <!-- update links for logged in users to be able to make edits only: -->

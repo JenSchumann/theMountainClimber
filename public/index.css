@@ -2,7 +2,10 @@
   font-family: 'Bowlby One', cursive;
 }
 
-
+.navbar-brand {
+  padding: 1em;
+  margin-right: 1em;
+}
 
 /* html, body{
   height: 100%;

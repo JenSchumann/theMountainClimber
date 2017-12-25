@@ -10,17 +10,24 @@
 
     </header>
 
+    <!-- Background Image -->
+          <img class="main-img img-responsive"  src="../images/yosemite-national-park-landscape-california-144251 (1).jpeg"alt="14eener Fever"/>
+
 
           <main class="profile">
-            <h1>Create Climber Profile</h1>
+            <br>
+
+            <br>
             <div class="container">
+              <h1>Create Climber Profile</h1>
+              <br>
                   <form action="/climbers" method="POST">
-                        <div class="tbody">
-                            <div class="table-row-group">
+                        <!-- <div class="tbody">
+                            <div class="table-row-group"> -->
 
                                 <div class="input-group">
                                   <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-user"></span>
+                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                                   </span>
                                   <input type="text" class="form-control" name="name" placeholder="Profile Name" /> </br> </div>
 
@@ -28,7 +35,7 @@
 
                                 <div class="input-group">
                                   <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-picture"></span>
+                                    <i class="fa fa-camera-retro" aria-hidden="true"></i>
                                   </span>
                                   <input type="url" class="form-control" name="img" placeholder="Photo URL" /> </br> </div>
 
@@ -36,23 +43,78 @@
 
                                 <div class="input-group">
                                   <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
                                   </span>
-                                  <input type="text" class="form-control" name="description" placeholder="About You" /> </br> </div>
+                                  <input type="text" class="form-control" name="description" placeholder="Tweet-sized Description About You" /> </br> </div>
 
+  <div class="input-group">
+    <span class="input-group-addon">
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </span>
+    <input type="text" class="form-control" name="whatLoveREClimb14eenrs" placeholder="What I like most about climbing 14eeners" /> </br> </div>
+
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <i class="fa fa-line-chart" aria-hidden="true"></i>
+    </span>
+    <input type="text" class="form-control" name="climberLevel" placeholder="Climber Level" />
+<!-- maybe later could create function which adds # of 14eener summits as part of climber index profile -->
+    <!-- <p class="text-uppercase">Climber Level: </p> -->
+
+
+    <select name="climberLevel">
+      <option value="Beginner">Beginner</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Accomplished">Accomplished</option>
+      <option value="Advanced">Advanced</option>
+      <option value="Expert">Expert</option>
+
+    </select> </br>
+
+   </div>
+
+
+
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="fa fa-cogs" aria-hidden="true"></i>
+      </span>
+      <input type="text" class="form-control" name="faveClimbGear" placeholder="Favorite Mountaineering Gear" /> </br> </div>
+
+
+
+
+
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        </span>
+        <input type="text" class="form-control" name="fourteenerClimbAdvice" placeholder="14eener Fever Advice" /> </br> </div>
+
+
+
+
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-binoculars" aria-hidden="true"></i>
+          </span>
+          <!-- need to create select with multi-selection functionality -->
+          <input type="text" class="form-control" name="wannaClimbThese14eenrs" placeholder="14eeners I hope to climb" /> </br> </div>
+
+          <br>
+          <br>
 
 
                                 <div class="input-group">
-                                  <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-circle-arrow-up"></span>
-                                  </span>
-                                  <input type="submit" class="form-control" name="submit" placeholder="Create Climber" /> </br> </div>
+
+                                  <input type="submit" id="createClimberButton" class="btn btn-primary justify-content-center" name="submit" placeholder="Create Profile" /> </br> </div>
 
                               </div>
-                            </div>
+                            <!-- </div> -->
 
                     </form>
-            </div>
+            <!-- </div> -->
           </main>
 
   <% include ../partials/footer.ejs %>

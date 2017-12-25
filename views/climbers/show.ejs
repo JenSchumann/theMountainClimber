@@ -9,6 +9,8 @@
       <% include ../partials/nav.ejs %>
 
       </header>
+      <br>
+      <br>
 
 
 <!-- climber post card -->
@@ -39,8 +41,8 @@
   </ul>
   <div class="card-body">
     <!-- update links for logged in users to be able to make edits only: -->
-    <a href="#" class="card-link">Update Profile</a>
-    <a href="#" class="card-link">Add New Summit</a>
+    <a href="/climbers/<%=climber._id%>/edit" class="card-link">Update Profile</a>
+    <a href="/climbs/new" class="card-link">Add New Summit</a>
 
     <!-- build functionality for users to comment and the comments are tied to their own user profile: -->
     <a href="#" class="card-link">Comment</a>
@@ -48,42 +50,38 @@
 </div>
 
 
+<!-- summit posts of climber (by id) CARD -->
+<br>
+<br>
+<br>
+<br>
+
+      <h1>My 14eener Summits</h1>
+      <br>
+
+      <% for(let i = 0; i < climber.climbs.length; i++){ %>
+
+          <div class="col-sm-3 d-inline-flex">
+              <div class="card bg-warning">
+
+                <img class="card-img-top img-fluid"  src="<%=climber.climbs[i].img;%>" alt="Card image cap">
+                <br>
+                <div class="card-block">
+                      <h4 class="card-title"><%=climber.climbs[i].fourteeners%></h4>
+                      <p class="card-text"><%=climber.climbs[i].about%></p>
+                      <p class="card-text"><%=climber.climbs[i].date%></p>
+                      <a href="/climbs/<%=climber.climbs[i]._id%>" class="btn btn-primary">See Post</a>
+                      <br>
+                      <br>
+                </div>
+              </div>
+          </div>
+
+      <% } %>
 
 
 
 
-
-                      <ul>
-
-					                  <% for(let i = 0; i < climber.climbs.length; i++){ %>
-
-                                      <h2>Fourteener Posts:</h2>
-                                       <li><a href="/climbs/<%=climber.climbs[i]._id%>">
-                                       <%=climber.climbs[i].fourteeners%></a></li><br/>
-                                       <li> <img src="<%=climber.climbs[i].img;%>"></li><br/>
-                                       <li><%=climber.climbs[i].about%></li><br/>
-                                       <li><%=climber.climbs[i].date%></li><br/>
-                            <% } %>
-				              </ul>
-
-
-              <section>
-
-                    <a href="/climbers/<%=climber._id%>/edit" class="btn btn-default" role="button">Edit</a>
-
-                    <hr>
-
-              </section>
-
-              <section>
-                  <form action="/climbers/<%=climber._id%>?_method=DELETE" method="POST">
-                  <input class="btn btn-default" role="button" type="submit" value="Delete Climber" />
-
-                    <hr>
-
-                  </form>
-
-              </section>
 
 
 

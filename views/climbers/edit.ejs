@@ -57,6 +57,17 @@
               </div>
             </div>
                 </form>
+
+                <section>
+                    <form action="/climbers/<%=climber._id%>?_method=DELETE" method="POST">
+                    <input class="btn btn-default" role="button" type="submit" value="Delete Climber" />
+
+                      <hr>
+
+                    </form>
+
+                </section>
+
       </main>
 
     <% include ../partials/footer.ejs %>

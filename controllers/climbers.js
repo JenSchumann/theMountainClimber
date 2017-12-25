@@ -58,7 +58,7 @@ router.delete('/:id', (req, res)=>{
         }
       },
       (err, data)=>{
-        res.redirect('/climbs');
+        res.redirect('/climbers');
       }
     );
   });

@@ -15,6 +15,10 @@
   padding: 1em;
 }
 
+.nav-link {
+  color: rgb(27, 27, 125);
+}
+
 .col-sm-3 {
 /* border: 1px solid hotpink; */
 margin-left: 6%;
@@ -102,6 +106,23 @@ div, body{
   padding-bottom: 35%;
 }*/
 
+.containerIndex {
+    /*max-width: 680px;*/
+    margin: 0 auto;
+    width: 80%;
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    padding: 5%;
+    text-align: center;
+    align-content: center;
+    /* background-color: rgba(27, 27, 125, 0.3); */
+    background-color: rgba(242, 242, 242, 0.5);
+    0, 128, 0
+}
+
 .container {
     /*max-width: 680px;*/
     margin: 0 auto;
@@ -142,6 +163,7 @@ div, body{
   background-position: center center fixed no-repeat;
   background-size: cover;
 }
+
 
 /* .link, visited, hover {
     text-decoration: none;

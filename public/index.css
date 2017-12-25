@@ -7,6 +7,10 @@
   margin-right: 1em;
 }
 
+.navbar-nav {
+  color: rgb(0, 51, 153);
+}
+
 /* html, body{
   height: 100%;
 } */

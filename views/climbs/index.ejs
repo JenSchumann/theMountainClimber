@@ -12,22 +12,46 @@
     </header>
 
 <br><br>
+  <div class="containerIndex">
+    <!-- maybe change wording? -->
+    <h1>14eener Summit Posts</h1><br>
+    <h2>Did You Reach It To The Peak??</h2>
 
-    <h1>14eener Summit Posts</h1>
+          <nav class="navbar justify-content-center">
 
-  <br><br>
+            <a href="/climbs/new" id="indexNav" class="btn btn-primary justify-content-between" role="button">Add Summit Post</a>
+            <!-- create a search bar here for 14eeners-->
+          </nav>
+  </div>
+
+
 
     <main>
+      <br>
+      <br>
+
+      <% for(let i = 0; i < climbs.length; i++) { %>
+
+        <div class="col-sm-3 d-inline-flex">
+
+          <div class="card">
+
+                <img class="card-img-top img-fluid"  src="<%=climbs[i].img;%>" alt="Card image cap">
+                <br>
+                <div class="card-block">
+                      <h4 class="card-title"><%=climbs[i].fourteeners%></h4>
 
 
-                <ul>
-                        <% for(let i = 0; i < climbs.length; i++) { %>
-                        <li>
-                              <a href="/climbs/<%=climbs[i]._id%>">
-                              <%=climbs[i].fourteeners%></a>
-                        </li>
-                  <%  }  %>
-                </ul>
+                      <a href="/climbs/<%=climbs[i]._id%>" class="btn btn-primary">See Post</a>
+                      <br>
+                      <br>
+                </div>
+            </div>
+
+        </div>
+
+<%}%>
+
     </main>
 
 

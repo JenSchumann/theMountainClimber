@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="mtnfever">
+<html>
   <head>
     <% include ../partials/head.ejs %>
   </head>
   <body>
 
-    <header>
+      <header>
 
-      <% include ../partials/nav.ejs %>
+        <% include ../partials/nav.ejs %>
 
-    </header>
+      </header>
 
-    <!-- Background Image -->
+      <!-- Background Image -->
           <img class="main-img img-responsive"  src="../images/yosemite-national-park-landscape-california-144251 (1).jpeg"alt="14eener Fever"/>
 
-          <main>
+      <main>
+        <br>
+        <br>
 
-          <br>
-
-          <br>
-          <div class="container">
-            <h1>Record a New Summit</h1>
+        <div class="container">
+            <h1>Post a New Summit</h1>
             <br>
-
               <form action="/climbs" method="POST">
 
                   <p class="text-uppercase">Select Climber</p>
@@ -32,7 +30,8 @@
                       <option value="<%=climbers[i]._id%>">
                       <%=climbers[i].name%></option>
                       <% } %>
-                  </select><br/><br><br>
+                  </select><br><br>
+
 
                   <p class="text-uppercase">New 14eener Summit (select one)</p>
 
@@ -98,61 +97,54 @@
                     <option value="Little Bear Peak">Little Bear Peak</option>
 
 
-                  </select> </br><br><br>
-
-
-                <!-- <p class="text-uppercase">About this Climb</p> -->
+                  </select> <br><br>
 
                   <div class="input-group">
                     <span class="input-group-addon">
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                      <i class="fa fa-camera-retro" aria-hidden="true"></i>
                     </span>
-                    <input type="text" class="form-control" name="about" placeholder="About This Summit" /> </br> </div>
+                    <input type="url" class="form-control" name="img" placeholder="Photo URL"/> <br>
+                  </div>
 
 
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="fa fa-camera-retro" aria-hidden="true"></i>
-                      </span>
-                      <input type="url" class="form-control" name="img" placeholder="Photo URL"/> </br> </div>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                       <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </span>
+                    <input type="text" class="form-control" name="about" placeholder="About This Summit" /> <br>
+                  </div>
 
-                    <div class="input-group">
+                  <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                        </span>
+                        <input type="text" class="form-control" name="summitTip" placeholder="Summit Tip" /> <br>
+                  </div>
+
+                  <div class="input-group">
                       <span class="input-group-addon">
                         <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                       </span>
-                      <input type="text" class="form-control" name="date" placeholder="Summit Date" /> </br> </div>
+                      <input type="text" class="form-control" name="date" placeholder="Summit Date" /> <br>
+                  </div>
 
-
-
-
-                      <br>
-                      <br>
-
-
-
-
-
+                  <br>
                 <div class="input-group">
-                    <input type="submit" id="createClimberButton" class="btn btn-primary justify-content-center" name="submit" placeholder="Post Summit" /> </br> </div>
+                  <input type="submit" id="createSummitPostButton" class="btn btn-primary justify-content-center" name="submit" value="Post" placeholder="Post Summit" /> <br> </div>
 
 
                   <br>
-
-
-                  <br>
-
-
-                  </br>
-
-            </div>
-
-
 
 
                 </form>
-
-
+            </div>
       </main>
+
+      <br>
+      <br>
+      <br>
+
+
       <% include ../partials/footer.ejs %>
 
   </body>

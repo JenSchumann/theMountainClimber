@@ -140,12 +140,12 @@ div, body{
     justify-content: center;
     /* border: 1px solid black; */
     border-radius: 15px;
-    padding: 5%;
+    padding: 2%;
     text-align: center;
     align-content: center;
     /* background-color: rgba(27, 27, 125, 0.3); */
     background-color: rgba(242, 242, 242, 0.4);
-    0, 128, 0
+
 }
 
 #createClimberButton {

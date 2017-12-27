@@ -11,14 +11,20 @@
 
     </header>
 
+    <!-- Background Image -->
+          <img class="main-img img-responsive"  src="../images/yosemite-national-park-landscape-california-144251 (1).jpeg"alt="14eener Fever"/>
+
+          <main>
+
+          <br>
+
+          <br>
+          <div class="container">
             <h1>Record a New Summit</h1>
+            <br>
 
-
-            
-
-      <main>
               <form action="/climbs" method="POST">
-                  <hr>
+
                   <p class="text-uppercase">Select Climber</p>
 
                   <select name="climberId">
@@ -26,8 +32,7 @@
                       <option value="<%=climbers[i]._id%>">
                       <%=climbers[i].name%></option>
                       <% } %>
-                  </select><br/>
-                  <hr>
+                  </select><br/><br><br>
 
                   <p class="text-uppercase">New 14eener Summit (select one)</p>
 
@@ -37,7 +42,6 @@
                     <option value="Torreys Peak">Torreys Peak</option>
                     <option value="Mt. Evans">Mt. Evans</option>
                     <option value="Longs Peak">Longs Peak</option>
-
                     <option value="Pikes Peak">Pikes Peak</option>
                     <option value="Mt. Bierstadt">Mt. Bierstadt</option>
                     <option value="Quandary Peak">Quandary Peak</option>
@@ -94,57 +98,54 @@
                     <option value="Little Bear Peak">Little Bear Peak</option>
 
 
-                  </select> </br>
-                  <hr>
+                  </select> </br><br><br>
 
-                <p class="text-uppercase">About this Climb</p>
+
+                <!-- <p class="text-uppercase">About this Climb</p> -->
 
                   <div class="input-group">
                     <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-pencil"></span>
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
                     </span>
                     <input type="text" class="form-control" name="about" placeholder="About This Summit" /> </br> </div>
 
-                  <hr>
-
-                  <p class="text-uppercase">Summit Date</p>
 
                     <div class="input-group">
                       <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-hourglass"></span>
+                        <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                      </span>
+                      <input type="url" class="form-control" name="img" placeholder="Photo URL"/> </br> </div>
+
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                       </span>
                       <input type="text" class="form-control" name="date" placeholder="Summit Date" /> </br> </div>
 
-                    <hr>
 
-                  <p class="text-uppercase">Summit Photo</p>
 
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-picture"></span>
-                    </span>
-                    <input type="url" class="form-control" name="img" placeholder="Photo URL"/> </br> </div>
 
-                    <hr>
+                      <br>
+                      <br>
+
+
+
 
 
                 <div class="input-group">
-                  <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-circle-arrow-up"></span>
-                  </span>
-                  <input type="submit" class="form-control" name="submit" value="Post Summit" placeholder="Post Summit" /> </br> </div>
+                    <input type="submit" id="createClimberButton" class="btn btn-primary justify-content-center" name="submit" placeholder="Post Summit" /> </br> </div>
 
-                  <hr>
-                  </br>
 
-                  <hr>
-                  </br>
+                  <br>
 
-                  <hr>
+
+                  <br>
+
+
                   </br>
 
             </div>
-          </div>
+
 
 
 

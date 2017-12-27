@@ -26,27 +26,24 @@
         <br>
         <br>
               <div class="cardClimberShow" style="width: 65%;">
-            <% for(let i = 0; i < climber.climbs.length; i++) { %>
+
 
 
                 <img class="card-img-top" src="<%=climb.img;%>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title"><%=climb.fourteeners%></h4>
 
-                  <p class="card-text"><strong>About This Climb:</strong> <%=climber.climbs[i].about%></p>
+                  <p class="card-text"><strong>About This Climb:</strong> <%=climb.about%></p>
 
                 </div>
                     <ul class="list-group list-group-flush">
 
 
-                      <li class="list-group-item"><strong>Summit Tip:</strong> <%=climber.climbs[i].summitTip%>
+                      <li class="list-group-item"><strong>Summit Tip:</strong> <%=climb.summitTip%>
                       </li>
 
 
-                      <li class="list-group-item"><strong>Date of Summit:</strong> <%=climber.climbs[i].date%>
-                      </li>
-
-                      <li class="list-group-item"><strong>Summit Rating:</strong> <%=climber.climbs[i].summitRating%>
+                      <li class="list-group-item"><strong>Date of Summit:</strong> <%=climb.date%>
                       </li>
 
                     </ul>
@@ -56,14 +53,14 @@
 
 
             <li class="list-group-item"><strong>Summit Post by:</strong>
-                         <a href="/climbs/<%=climber.climbs[i].id%>">
-                         <%=climber.name%></a><br/>
+
+                         <%=climber.name%><br/>
                        </li><br/>
 
 
-        <% } %>
 
-         
+
+
 
 
                     <div class="card-body">

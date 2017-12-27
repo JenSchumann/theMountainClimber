@@ -19,25 +19,25 @@
   <img class="card-img-top" src="<%=climber.img;%>" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title"><%=climber.name;%></h4>
-    <!-- need to update schema -->
-    <p class="card-text">What I like most about climbing 14eeners: <%=climber.whatLoveREClimb14eenrs;%></p>
 
-    <!-- The sense of accomplishment I have when I reach the summit -->
+    <p class="card-text"><strong>What I like most about climbing 14eeners: </strong> <%=climber.whatLoveREClimb14eenrs;%></p>
+
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">About: <%=climber.description;%></li>
-    <!-- need to update schema -->
-    <li class="list-group-item">Climber level: <%=climber.climberLevel;%></li>
-    <!-- need to update schema -->
-    <li class="list-group-item">Favorite Mountaineering Gear: <%=climber.faveClimbGear;%></li>
-    <!-- need to update schema -->
-    <li class="list-group-item">14eener Fever Advice: <%=climber.fourteenerClimbAdvice;%></li>
-    <!-- need to update schema -->
-    <li class="list-group-item">14eeners I hope to climb:
+    <li class="list-group-item"><strong>About Me: </strong> <%=climber.description;%></li>
+
+    <li class="list-group-item"><strong>Climber Level: </strong> <%=climber.climberLevel;%></li>
+
+    <li class="list-group-item"><strong>Favorite Mountaineering Gear: </strong> <%=climber.faveClimbGear;%></li>
+
+    <li class="list-group-item"><strong>14eener Fever Advice: </strong> <%=climber.fourteenerClimbAdvice;%></li>
+
+    <li class="list-group-item"><strong>14eeners I hope to climb: </strong>
     <%=climber.wannaClimbThese14eenrs;%></li>
 
+    <h5 class="list-group-item"><strong>14eener Summits: </strong></h5>
      <% for(let i = 0; i < climber.climbs.length; i++){ %>
-              <li class="list-group-item">14eener Summits: <a href="/climbs/<%=climber.climbs[i]._id%>">
+              <li class="list-group-item"><a href="/climbs/<%=climber.climbs[i]._id%>">
               <%=climber.climbs[i].fourteeners%></a></li>
 
 
@@ -66,7 +66,7 @@
       <% for(let i = 0; i < climber.climbs.length; i++){ %>
 
           <div class="col-sm-3 d-inline-flex">
-              <div class="card bg-warning">
+              <div class="card">
 
                 <img class="card-img-top img-fluid"  src="<%=climber.climbs[i].img;%>" alt="Card image cap">
                 <br>

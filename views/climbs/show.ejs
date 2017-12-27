@@ -7,49 +7,88 @@
     <header>
       <% include ../partials/nav.ejs %>
     </header>
-<br><br>
-                    <h1>Summit Posts About <%=climb.fourteeners%></h1>
+          <br><br>
 
 
-        <section>
-            <div class="container">
+    <div class="containerIndex">
+      <!-- maybe change wording? -->
+      <h1>Summit Posts About <%=climb.fourteeners%></h1><br>
 
-              <div class="row">
-              <div class="col-md-8 col-md-8">
-              <div class="thumbnail">
-              <div class="caption">
 
-                    <ul class="summitPostModal">
-                      <% for(let i = 0; i < climber.climbs.length; i++) { %>
+            <nav class="navbar justify-content-center">
 
-                        <!-- the a href doesn't make sense here, there should be a list of climbers who have listed this as a summit, but not in this way (perhaps how the fourteener summits are listed on show page for climber) -->
-                        <h2>Summit Post by:</h2>
-                         <a href="/climbs/<%=climber.climbs[i].id%>">
-                         <%=climber.name%></a><br/>
-                        <li><a href="/climbs/<%=climber.climbs[i].id%>">
-                        <img src="<%=climber.climbs[i].img;%>"></a></li><br/>
-                        <li><%=climber.climbs[i].about%></li><br/>
-                        <li><%=climber.climbs[i].date%></li><br/>
+              <a href="/climbs/new" id="indexNav" class="btn btn-primary justify-content-between" role="button">Add Summit Post</a>
+              <!-- create a search bar here for 14eeners-->
+            </nav>
+    </div>
 
-                    <% } %>
+    <main>
+        <br>
+        <br>
+              <div class="cardClimberShow" style="width: 65%;">
+            <% for(let i = 0; i < climber.climbs.length; i++) { %>
+
+
+                <img class="card-img-top" src="<%=climb.img;%>" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title"><%=climb.fourteeners%></h4>
+
+                  <p class="card-text"><strong>About This Climb:</strong> <%=climber.climbs[i].about%></p>
+
+                </div>
+                    <ul class="list-group list-group-flush">
+
+
+                      <li class="list-group-item"><strong>Summit Tip:</strong> <%=climber.climbs[i].summitTip%>
+                      </li>
+
+
+                      <li class="list-group-item"><strong>Date of Summit:</strong> <%=climber.climbs[i].date%>
+                      </li>
+
+                      <li class="list-group-item"><strong>Summit Rating:</strong> <%=climber.climbs[i].summitRating%>
+                      </li>
 
                     </ul>
 
 
 
+
+
+            <li class="list-group-item"><strong>Summit Post by:</strong>
+                         <a href="/climbs/<%=climber.climbs[i].id%>">
+                         <%=climber.name%></a><br/>
+                       </li><br/>
+
+
+        <% } %>
+
+         
+
+
+                    <div class="card-body">
+
+
+                      <a href="/climbs/new" id="indexNav" class="btn btn-primary justify-content-between" role="button">Add New Summit</a>
+
+                      <!-- build functionality for users to comment and the comments are tied to their own user profile: -->
+                      <a href="#" id="indexNav" class="btn btn-primary justify-content-between" role="button">Comment</a>
+                    </div>
                   </div>
-                  </div>
-                  </div>
-          </div></div>
-      </section>
+                  <!-- </div> -->
+                  <br>
+                  <br>
+                  <br>
+                  <br>
 
 
 
-          <section>
+
+          <!--<section>
                 <form action="/climbs/<%=climb._id%>?_method=DELETE" method="POST">
 
                 </form>
-        </section>
+        </section> -->
 
 <% include ../partials/footer.ejs %>
   </body>

@@ -52,6 +52,15 @@ h1, h2 {
   font-family: 'Bowlby One', cursive;
 }
 
+.card-title {
+  /* font-family: 'Bowlby One', cursive; */
+}
+
+.card-text, .list-group-item {
+  font-family: 'Mandali', sans-serif;
+  font-size: 1.5em;
+}
+
 /* body { */
 			/* background-image: url("https://static.pexels.com/photos/326235/pexels-photo-326235.jpeg") ; */
 			/* background-position: center center;

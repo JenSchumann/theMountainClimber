@@ -6,6 +6,8 @@
   <body>
     <% include ../partials/visitor-nav.ejs %>
 
+    <!-- Background Image -->
+          <img class="main-img img-responsive"  src="../images/yosemite-national-park-landscape-california-144251 (1).jpeg"alt="14eener Fever"/>
 
     <br>
     <br>
@@ -15,10 +17,13 @@
     <br>
       <div class="register">
 
+      <div class="container">
 
+
+<br><br>
       <h1>Create Account</h1>
 
-
+<br><br>
 <form action="/sessions/register" method="POST">
 
   <p class="enter">Username:
@@ -29,8 +34,10 @@
    <input type="password" name="password" value=""> <br/>
   </p>
 
-   <button>Register</button>
+   <button class="btn btn-primary justify-content-center">Register</button>
 </form>
+<br><br>
+</div>
 </div>
 <% include ../partials/footer.ejs %>
 </body>

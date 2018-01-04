@@ -20,9 +20,10 @@
 
 **PLANNED FEATURES:**
 - Troubleshoot user ability to edit other user info
-- Update styling on climber index page
+- Group summit posts together by each 14eener (index show page for each 14eener)
 - Give users ability to comment on other climber's summits/profiles
+- Give user ability to edit/update a summit post
 - Update ability for user to upload photo from their phone (instead of URL)
 - Update seed data to include posts of all those who gave consent during production of this app
 - Reach out to Bill Middlebrook, site developer of 14ers.com with request to be added to the 14ers.com Links page
-- Improve responsiveness (e.g. picture sizing at diff screen sizes, padding between nav bar buttons during resizing)
+- Improve responsiveness (e.g. picture sizing at diff screen sizes; create media queries )  

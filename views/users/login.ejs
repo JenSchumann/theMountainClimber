@@ -7,32 +7,40 @@
   <body>
     <% include ../partials/visitor-nav.ejs %>
 
+    <!-- Background Image -->
+          <img class="main-img img-responsive"  src="../images/yosemite-national-park-landscape-california-144251 (1).jpeg"alt="14eener Fever"/>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="login">
+      <div class="container">
 
 
 
-<br>
-<br>
-<br>
-
-
-<div class="login">
-  <div class="list-group-item">
-
-    <h1 class="reg">Login, If you have 14eener Fever.. <br><br> <small>Don't have an account yet? <a class="link" href="/sessions/register">Register!</a>
+    <h1 class="reg">Login, if you have 14eener Fever.. <br><br> <small>Don't have an account yet? <a class="link" href="/sessions/register">Register!</a>
     </small></h1>
+
+    <br>
+    <br>
   <form  action="/sessions/login" method="POST">
     <p>Username: <input type="text" name="username" value=""> <br>
     </p>
     <p>Password: <input type="password" name="password" value=""><br>
     </p>
+    <br>
     <button class="btn btn-primary" role="button">Login</button>
   </form>
-</div>
+
 
 <% if (message) { %>
   <%= message %>
   <% } %>
-
+</div>
 </div>
   <div class="clearfix"></div>
   <% include ../partials/footer.ejs %>

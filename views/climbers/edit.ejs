@@ -1,145 +1,144 @@
 <!DOCTYPE html>
-<html ng-app="mtnfever">
+<html>
   <head>
     <% include ../partials/head.ejs %>
   </head>
   <body>
-
     <header>
 
       <% include ../partials/nav.ejs %>
 
     </header>
 
-      <main>
-                <h2>Climber Profile:</h2>
-                <form action="/climbers/<%=climber._id%>?_method=PUT" method="POST">
+    <!-- Background Image not working right now for some reason -->
+    <!-- <img class="main-img img-responsive"  src="../images/pexels-photo-533917.jpeg" alt=""> -->
 
-                  <div class="tbody">
-                    <div class="table-row-group">
 
-                      <p class="text-uppercase">Update Profile Name</p>
-                                <div class="input-group">
+      <main class="updateProfile">
+        <br>
+        <br>
 
-                                  <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-user"></span>
-                                  </span>
-                                  <input type="text" class="form-control" name="name" placeholder="Profile Name" value="<%=climber.name%>"/>
-                                  <br/> </div>
-
-                      <p class="text-uppercase">Update Profile Image</p>
-                                  <div class="input-group">
-                                  <span class="input-group-addon">
-                                  <span class="glyphicon glyphicon-picture"></span>
-                                  </span>
-
-                                  <input type="url" class="form-control" name="img" placeholder="Update Photo" value="<%=climber.img%>"/>
-                                  <br/> </div>
-
-                      <p class="text-uppercase">Update Climber Profile</p>
-                                  <div class="input-group">
-                                  <span class="input-group-addon">
-                                  <span class="glyphicon glyphicon-pencil"></span>
-                                  </span>
-
-                                  <input type="text" class="form-control" name="description" placeholder="Climber Profile Update" value="<%=climber.description%>" /> </br> </div>
+          <div class="container">
+            <form action="/climbers/<%=climber._id%>?_method=PUT" method="POST">
+              <br>
+              <fieldset>
+                <h2>Update Climber Profile</h2>
+                <br>
+                <br>
 
 
 
+                  <div class="input-group input-group-lg justify-content-center">
+<div class="input-group-prepend">
+                      <span class="input-group-addon"><i class="fa fa-user-circle-o" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update Profile Name:</p></div>
 
-  <p class="text-uppercase">Update 14eener Fever</p>
-              <div class="input-group">
-              <span class="input-group-addon">
-              <span class="glyphicon glyphicon-pencil"></span>
-              </span>
+                      <input type="text" class="form-control" name="name"  value="<%=climber.name%>"/></span>
+                      <br>
 
-              <input type="text" class="form-control" name="whatLoveREClimb14eenrs" placeholder="What I like most about climbing 14eeners" value="<%=climber.whatLoveREClimb14eenrs;%>" /> </br> </div>
-
-
-<!-- this needs select/option functionality: -->
-  <p class="text-uppercase">Update Climber Level</p>
-              <div class="input-group">
-              <span class="input-group-addon">
-              <span class="glyphicon glyphicon-pencil"></span>
-              </span>
-
-              <input type="text" class="form-control" name="climberLevel" placeholder="Climber Level Update" value="<%=climber.climberLevel;%>" />
-              <select name="climberLevel">
-                <option value="Beginner">Beginner</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Accomplished">Accomplished</option>
-                <option value="Advanced">Advanced</option>
-                <option value="Expert">Expert</option>
-
-              </select> </br> </br> </div>
+                  </div>
 
 
+                  <div class="input-group input-group-lg justify-content-center">
+<div class="input-group-prepend">
+                      <span class="input-group-addon">
+                      <i class="fa fa-camera-retro" style="padding:.5em; font-size:2em;" aria-hidden="true"></i><p class="updateClimber">Update Profile Image:</p></div>
 
-  <p class="text-uppercase">Update Favorite Mountaineering Gear</p>
-              <div class="input-group">
-              <span class="input-group-addon">
-              <span class="glyphicon glyphicon-pencil"></span>
-              </span>
+                      <input type="url" class="form-control" name="img" value="<%=climber.img%>"/> </span>
+                      <br>
 
-              <input type="text" class="form-control" name="faveClimbGear" placeholder="Favorite Mountaineering Gear" value="<%=climber.faveClimbGear;%>" /> </br> </div>
-
-
-
-  <p class="text-uppercase">Update 14eener Fever Advice</p>
-              <div class="input-group">
-              <span class="input-group-addon">
-              <span class="glyphicon glyphicon-pencil"></span>
-              </span>
-
-              <input type="text" class="form-control" name="fourteenerClimbAdvice" placeholder="Climber Profile Update" value="<%=climber.fourteenerClimbAdvice;%>" /> </br> </div>
+                  </div>
 
 
+                  <div class="input-group input-group-lg justify-content-center">
+<div class="input-group-prepend">
+                      <span class="input-group-addon">
+                      <i class="fa fa-pencil" style="padding:.5em; font-size:2em;" aria-hidden="true"></i><p class="updateClimber">Update Climber Profile:</p></div>
 
-<!-- this needs select/option functionality: -->
-  <p class="text-uppercase">Update 14eeners I hope to climb</p>
-              <div class="input-group">
-              <span class="input-group-addon">
-              <span class="glyphicon glyphicon-pencil"></span>
-              </span>
+                      <input type="text" class="form-control" name="description"  value="<%=climber.description%>"/></span>
+                      <br>
 
-              <input type="text" class="form-control" name="wannaClimbThese14eenrs" placeholder="14eeners I hope to climb" value="<%=climber.wannaClimbThese14eenrs;%>" /> </br> </div>
-
-
+                  </div>
 
 
+                  <div class="input-group input-group-lg justify-content-center">
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                      <i class="fa fa-heart" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                      <p class="updateClimber">Update 14eener Fever:</p></div>
 
 
+                      <input type="text" class="form-control" name="whatLoveREClimb14eenrs"  value="<%=climber.whatLoveREClimb14eenrs;%>"/></span><br>
+                  </div>
 
 
+                  <div class="input-group input-group-lg justify-content-center">
+                      <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                      <i class="fa fa-cogs" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                      <p class="updateClimber">Update Fave Mountaineering Gear:</p></div>
+
+                      <input type="text" class="form-control" name="faveClimbGear" value="<%=climber.faveClimbGear;%>"/></span><br>
+                  </div>
 
 
+                  <div class="input-group input-group-lg justify-content-center">
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                      <i class="fa fa-commenting-o" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                      <p class="updateClimber">Update 14eener Fever Advice:</p></div>
+
+                      <input type="text" class="form-control" name="fourteenerClimbAdvice"  value="<%=climber.fourteenerClimbAdvice;%>"/></span><br>
+                  </div>
+
+<!-- this needs MULTIPLE select/option functionality: -->
+
+                  <div class="input-group input-group-lg justify-content-center">
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                      <i class="fa fa-binoculars" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                      <p class="updateClimber">Update 14eeners I hope to climb:</p></div>
+
+                      <input type="text" class="form-control" name="wannaClimbThese14eenrs" value="<%=climber.wannaClimbThese14eenrs;%>"/></span><br>
+                  </div>
+
+                  <div class="input-group input-group-lg justify-content-center">
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                      <i class="fa fa-line-chart" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                      <p class="updateClimber">Update Climber Level:</p></div>
+
+                      <!-- <input type="text" class="form-control" name="climberLevel" placeholder="Climber Level Update" value="<%=climber.climberLevel;%>" /> -->
+                      <select name="climberLevel" value="<%=climber.climberLevel;%>">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Accomplished">Accomplished</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Expert">Expert</option>
+                      </select>
+                    </span><br>
+                  </div>
+
+                  <br>
 
 
-
-                      <hr>
-                      <div class="input-group">
-                                  <span class="input-group-addon">
-                                  <span class="glyphicon glyphicon-circle-arrow-up"></span>
-                                  </span>
-
-                                  <input type="submit" class="form-control" name="submit" placeholder="Submit Update" value="Update Climber" /> </br> </div>
+<div class="d-inline-flex justify-content-around">
+                      <input type="submit" id="updateClimberButton" class="btn btn-primary" name="submit"  value="Update"/>
 
 
+....
 
+                  <form action="/climbers/<%=climber._id%>?_method=DELETE" method="POST">
+                  <input class="btn btn-primary" id="updateClimberButton" role="button" type="submit" value="Delete"/>
+                  </form>
 
-              </div>
+<!-- </div> -->
+<br><br>
+</fieldset>
             </div>
-                </form>
+<br><br><br>
 
-                <section>
-                    <form action="/climbers/<%=climber._id%>?_method=DELETE" method="POST">
-                    <input class="btn btn-default" role="button" type="submit" value="Delete Climber" />
-
-                      <hr>
-
-                    </form>
-
-                </section>
+<br><br><br>
 
       </main>
 

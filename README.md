@@ -1,12 +1,12 @@
 # PROJECT: You Have Climbed This Mountain
 **LIVE SITE:** https://climbfourteenerapp.herokuapp.com/
 
-## **SUMMARY:**  "You Have Climbed This Mountain" is an app for avid hikers who have a fever for climbing the 14eeners of beautiful CO. Created in a one week sprint.
+**SUMMARY:**  "You Have Climbed This Mountain" is an app for avid hikers who have a fever for climbing the 14eeners of beautiful CO. Created in a one week sprint.
 
-# APPROACH
-## **TECHNOLOGY USED:** HTML/EJS, CSS, JavaScript/jQuery/, MongoDB/Mongoose, Node.js, Express, Bcrypt, Bootstrap
+**TECHNOLOGY USED:**
+ HTML5, CSS, JavaScript/jQuery/, MongoDB/Mongoose, Node.js, Express, Bcrypt, Bootstrap
 
-## **DESCRIPTION:**
+**DESCRIPTION:**
 - You Have Climbed This Mountain is a full-stack, sessions based, three model CRUD app build with MVC file organization
     - Models: User (sessions), Climber (full CRUD), Climbs (full CRUD)
     - User Stories:
@@ -18,8 +18,7 @@
         - HTML/CSS done with Bootstrap frameworks
         - App is semi-responsive
 
-# **ETC.**
-## **PLANNED FEATURES:**
+**PLANNED FEATURES:**
 - Troubleshoot user ability to edit other user info
 - Update styling on climber index page
 - Give users ability to comment on other climber's summits/profiles

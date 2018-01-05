@@ -107,7 +107,18 @@ h1, h2 {
     text-align: center;
     align-content: center;
     background-color: rgba(242, 242, 242, 0.4);
+}
 
+.containerHome {
+  width: 45%;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 2%;
+  text-align: center;
+  align-content: center;
+  background-color: rgba(242, 242, 242, 0.4);
+  margin-left: 3%;
 }
 
 #createClimberButton, #createSummitPostButton {

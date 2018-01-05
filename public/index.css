@@ -11,11 +11,20 @@
   color: rgb(0, 51, 153);
 }
 
+.wallpaper {
+  background-repeat: repeat-x;
+}
 /* html, body{
   height: 100%;
 } */
+
 /* body {
-			background-image: url("https://static.pexels.com/photos/253892/pexels-photo-253892.jpeg");
+			background-image: url("https://cdn.wallpapersafari.com/10/37/Aim58J.jpg");
+      background-repeat: repeat-x;
+    z-index: -20;
+      background-position: 0 Y;
+} */
+      /*
 			background-position: center center;
 			background-repeat:  no-repeat;
 			background-attachment: fixed;

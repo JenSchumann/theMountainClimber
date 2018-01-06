@@ -42,6 +42,10 @@ h1, h2 {
   font-family: 'Bowlby One', cursive;
 }
 
+.card-body {
+  background-color: white;
+}
+
 .card-title {
   /* font-family: 'Bowlby One', cursive; */
 }
@@ -49,6 +53,10 @@ h1, h2 {
 .card-text, .list-group-item {
   font-family: 'Mandali', sans-serif;
   font-size: 1.5em;
+}
+
+#indexWallpaper {
+  background-repeat: repeat-y;
 }
 
 /* body { */
@@ -88,7 +96,7 @@ h1, h2 {
     justify-content: center;
     /* border: 1px solid black; */
     border-radius: 15px;
-    padding: 5%;
+    padding: 3%;
     text-align: center;
     align-content: center;
     background-color: rgba(242, 242, 242, 0.5);

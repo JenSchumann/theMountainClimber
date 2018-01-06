@@ -139,6 +139,10 @@ h1, h2 {
     margin: 0 auto;
 }
 
+#updateClimberButton {
+    margin-right: 3em;
+}
+
 .form-control {
     height: 4em;
 }

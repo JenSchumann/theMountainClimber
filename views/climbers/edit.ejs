@@ -1,118 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mtnfever">
   <head>
     <% include ../partials/head.ejs %>
   </head>
   <body>
+
     <header>
 
       <% include ../partials/nav.ejs %>
 
     </header>
-<!-- image is not rendering for some reason -->
-    <style>
-    body {
-        background-image: url("../images/background-2855345_1920.jpg");
-        background-repeat: repeat-y;
-    }
-    </style>
 
+    <!-- ============================================================================== -->
+
+    <!-- image is not rendering for some reason -->
+        <style>
+        body {
+            /* background-image: url("../images/background-2499670_1920.jpg"); */
+            /* background-repeat: repeat-y; */
+            background: linear-gradient(to right, rgba(0, 61, 153,1) 30%, rgba(26, 117, 255,0.85) 55%, rgba(128, 179, 255,0.42) 75%, rgba(204, 224, 255,0.42) 90%);
+        }
+        </style>
+
+    <!-- ============================================================================== -->
 
       <main class="updateProfile">
+
+        <br>
         <br>
         <br>
 
           <div class="container">
+
             <form action="/climbers/<%=climber._id%>?_method=PUT" method="POST">
               <br>
-              <fieldset>
+              <!-- <fieldset> -->
                 <h2>Update Climber Profile</h2>
                 <br>
                 <br>
 
-
-
                   <div class="input-group input-group-lg justify-content-center">
-<div class="input-group-prepend">
-                      <span class="input-group-addon"><i class="fa fa-user-circle-o" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                        <i class="fa fa-user-circle-o" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
                         <p class="updateClimber">Update Profile Name:</p></div>
 
-                      <input type="text" class="form-control" name="name"  value="<%=climber.name%>"/></span>
-                      <br>
-
-                  </div>
-
-
-                  <div class="input-group input-group-lg justify-content-center">
-<div class="input-group-prepend">
-                      <span class="input-group-addon">
-                      <i class="fa fa-camera-retro" style="padding:.5em; font-size:2em;" aria-hidden="true"></i><p class="updateClimber">Update Profile Image:</p></div>
-
-                      <input type="url" class="form-control" name="img" value="<%=climber.img%>"/> </span>
-                      <br>
-
-                  </div>
-
-
-                  <div class="input-group input-group-lg justify-content-center">
-<div class="input-group-prepend">
-                      <span class="input-group-addon">
-                      <i class="fa fa-pencil" style="padding:.5em; font-size:2em;" aria-hidden="true"></i><p class="updateClimber">Update Climber Profile:</p></div>
-
-                      <input type="text" class="form-control" name="description"  value="<%=climber.description%>"/></span>
-                      <br>
-
+                        <input type="text" class="form-control" name="name"  value="<%=climber.name%>"/></span><br>
                   </div>
 
 
                   <div class="input-group input-group-lg justify-content-center">
                     <div class="input-group-prepend">
                       <span class="input-group-addon">
-                      <i class="fa fa-heart" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
-                      <p class="updateClimber">Update 14eener Fever:</p></div>
+                        <i class="fa fa-camera-retro" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update Profile Image:</p></div>
 
-
-                      <input type="text" class="form-control" name="whatLoveREClimb14eenrs"  value="<%=climber.whatLoveREClimb14eenrs;%>"/></span><br>
-                  </div>
-
-
-                  <div class="input-group input-group-lg justify-content-center">
-                      <div class="input-group-prepend">
-                      <span class="input-group-addon">
-                      <i class="fa fa-cogs" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
-                      <p class="updateClimber">Update Fave Mountaineering Gear:</p></div>
-
-                      <input type="text" class="form-control" name="faveClimbGear" value="<%=climber.faveClimbGear;%>"/></span><br>
+                        <input type="url" class="form-control" name="img" value="<%=climber.img%>"/></span><br>
                   </div>
 
 
                   <div class="input-group input-group-lg justify-content-center">
                     <div class="input-group-prepend">
                       <span class="input-group-addon">
-                      <i class="fa fa-commenting-o" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
-                      <p class="updateClimber">Update 14eener Fever Advice:</p></div>
+                        <i class="fa fa-pencil" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update Climber Profile:</p></div>
 
-                      <input type="text" class="form-control" name="fourteenerClimbAdvice"  value="<%=climber.fourteenerClimbAdvice;%>"/></span><br>
+                        <input type="text" class="form-control" name="description"  value="<%=climber.description%>"/></span><br>
                   </div>
+
+
+                  <div class="input-group input-group-lg justify-content-center">
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                        <i class="fa fa-heart" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update 14eener Fever:</p></div>
+
+                        <input type="text" class="form-control" name="whatLoveREClimb14eenrs"  value="<%=climber.whatLoveREClimb14eenrs;%>"/></span><br>
+                  </div>
+
+
+                  <div class="input-group input-group-lg justify-content-center">
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                        <i class="fa fa-cogs" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update Fave Mountaineering Gear:</p></div>
+
+                        <input type="text" class="form-control" name="faveClimbGear" value="<%=climber.faveClimbGear;%>"/></span><br>
+                  </div>
+
+
+                  <div class="input-group input-group-lg justify-content-center">
+                    <div class="input-group-prepend">
+                      <span class="input-group-addon">
+                        <i class="fa fa-commenting-o" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update 14eener Fever Advice:</p></div>
+
+                        <input type="text" class="form-control" name="fourteenerClimbAdvice"  value="<%=climber.fourteenerClimbAdvice;%>"/></span><br>
+                  </div>
+
 
 <!-- this needs MULTIPLE select/option functionality: -->
-
                   <div class="input-group input-group-lg justify-content-center">
                     <div class="input-group-prepend">
                       <span class="input-group-addon">
-                      <i class="fa fa-binoculars" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
-                      <p class="updateClimber">Update 14eeners I hope to climb:</p></div>
+                        <i class="fa fa-binoculars" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update 14eeners I hope to climb:</p></div>
 
-                      <input type="text" class="form-control" name="wannaClimbThese14eenrs" value="<%=climber.wannaClimbThese14eenrs;%>"/></span><br>
+                        <input type="text" class="form-control" name="wannaClimbThese14eenrs" value="<%=climber.wannaClimbThese14eenrs;%>"/></span><br>
                   </div>
 
+
                   <div class="input-group input-group-lg justify-content-center">
                     <div class="input-group-prepend">
                       <span class="input-group-addon">
-                      <i class="fa fa-line-chart" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
-                      <p class="updateClimber">Update Climber Level:</p></div>
+                        <i class="fa fa-line-chart" style="padding:.5em; font-size:2em;" aria-hidden="true"></i>
+                        <p class="updateClimber">Update Climber Level:</p></div>
 
-                      <!-- <input type="text" class="form-control" name="climberLevel" placeholder="Climber Level Update" value="<%=climber.climberLevel;%>" /> -->
                       <select name="climberLevel" value="<%=climber.climberLevel;%>">
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
@@ -126,25 +129,24 @@
                   <br>
 
 
-<div class="d-inline-flex justify-content-around">
+                  <div class="d-inline-flex justify-content-around">
                       <input type="submit" id="updateClimberButton" class="btn btn-primary" name="submit"  value="Update"/>
+                  <!-- </div> -->
 
+<!-- </fieldset> -->
 
-....
-
-                  <form action="/climbers/<%=climber._id%>?_method=DELETE" method="POST">
-                  <input class="btn btn-primary" id="updateClimberButton" role="button" type="submit" value="Delete"/>
-                  </form>
-
-<!-- </div> -->
-<br><br>
-</fieldset>
+            </form>
+<!-- <div class="d-inline-flex justify-content-around"> -->
+            <form action="/climbers/<%=climber._id%>?_method=DELETE" method="POST">
+              <input class="btn btn-primary" role="button" type="submit" value="Delete"/>
+            </form>
             </div>
+<!-- <br><br><br> -->
+        </div>
 <br><br><br>
 
+</main>
 <br><br><br>
-
-      </main>
 
     <% include ../partials/footer.ejs %>
 

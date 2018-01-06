@@ -126,7 +126,9 @@ h1, h2 {
   text-align: center;
   align-content: center;
   background-color: rgba(242, 242, 242, 0.4);
-  margin-left: 3%;
+  /* when more content is planned for 2 column: */
+  /* margin-left: 3%; */
+  margin: 0 auto;
 }
 
 #createClimberButton, #createSummitPostButton {

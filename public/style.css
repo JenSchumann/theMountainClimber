@@ -59,34 +59,6 @@ h1, h2 {
   background-repeat: repeat-y;
 }
 
-/* body { */
-			/* background-image: url("https://static.pexels.com/photos/326235/pexels-photo-326235.jpeg") ; */
-			/* background-position: center center;
-			background-repeat:  no-repeat;
-			background-attachment: fixed;
-			background-size:  cover;
-			/* background-color: #999; */
-      /* position: relative;
-      text-align: center;
-      justify-content: center; */
-
-/* }
-
-/* .message {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  height:45%;
-  bottom: 0;
-  display: block;
-  position: absolute;
-  background-color: rgba(0,0,0,0.6);
-  color: #fff;
-  padding: 0.5em;
-
-} */
-
 .containerIndex {
     /*max-width: 680px;*/
     margin: 0 auto;
@@ -178,9 +150,6 @@ h1, h2 {
     display: inline-block;
 } */
 
-/* .register, .profile {
-  padding-top: 70px;
-} */
 
 .modal-body {
   width: 90%;
